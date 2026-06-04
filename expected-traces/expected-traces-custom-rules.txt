@@ -1,0 +1,396 @@
+Trace 0 - Autocomplete.ashx.cs:33:17-45:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:28-52                     context.Request["query"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:13-52                     string query = context.Request["query"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:28:61-66                     query
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:28:27-81                     Encoder.ToJSONSAutocompleteString(query, ds.Tables[0])
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:201:63-68                              query
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:210:13-53                              sb.Append("{\nquery:'" + query + "',\n")
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:220:36-88                              sb.ToString().Substring(0, sb.ToString().Length - 1)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:220:13-89                              sb = new StringBuilder(sb.ToString().Substring(0, sb.ToString().Length - 1))
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:224:20-33                              sb.ToString()
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:28:13-81                     string json = Encoder.ToJSONSAutocompleteString(query, ds.Tables[0])
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:33:17-45                     context.Response.Write(json)
+
+Trace 1 - ForgotPassword.aspx.cs:66:21-148:
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:153:29-54                              System.Text.Encoding.UTF8
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:153:13-71                              string output = System.Text.Encoding.UTF8.GetString(bytes)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:154:20-26                              output
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:364:21-79                     string decoded_password = Encoder.Decode(encoded_password)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:365:21-46                     result = decoded_password
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:372:20-26                     result
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:77:13-59                   string password = du.GetPasswordByEmail(email)
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:78:20-28                   password
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:66:122-148                 getPassword(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:66:42-148                  "Security Question Challenge Successfully Completed! <br/>Your password is: " + getPassword(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:66:21-148                  labelPassword.Text = "Security Question Challenge Successfully Completed! <br/>Your password is: " + getPassword(txtEmail.Text)
+
+Trace 2 - ForgotPassword.aspx.cs:66:21-148:
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:153:29-54                              System.Text.Encoding.UTF8
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:153:13-71                              string output = System.Text.Encoding.UTF8.GetString(bytes)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:154:20-26                              output
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:366:21-79                      string decoded_password = Encoder.Decode(encoded_password)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:367:21-46                      result = decoded_password
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:374:20-26                      result
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:77:13-59                   string password = du.GetPasswordByEmail(email)
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:78:20-28                   password
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:66:122-148                 getPassword(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:66:42-148                  "Security Question Challenge Successfully Completed! <br/>Your password is: " + getPassword(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:66:21-148                  labelPassword.Text = "Security Question Challenge Successfully Completed! <br/>Your password is: " + getPassword(txtEmail.Text)
+
+Trace 3 - ForgotPassword.aspx.cs:67:21-148:
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:153:29-54                              System.Text.Encoding.UTF8
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:153:13-71                              string output = System.Text.Encoding.UTF8.GetString(bytes)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:154:20-26                              output
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:366:21-79                      string decoded_password = Encoder.Decode(encoded_password)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:367:21-46                      result = decoded_password
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:374:20-26                      result
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:13-59                   string password = du.GetPasswordByEmail(email)
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:84:20-28                   password
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:122-148                 getPassword(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:42-148                  "Security Question Challenge Successfully Completed! <br/>Your password is: " + getPassword(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:21-148                  labelPassword.Text = "Security Question Challenge Successfully Completed! <br/>Your password is: " + getPassword(txtEmail.Text)
+
+Trace 4 - ForgotPassword.aspx.cs:67:21-148:
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:153:29-54                              System.Text.Encoding.UTF8
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:153:13-71                              string output = System.Text.Encoding.UTF8.GetString(bytes)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/Encoder.cs:154:20-26                              output
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:364:21-79                     string decoded_password = Encoder.Decode(encoded_password)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:365:21-46                     result = decoded_password
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:372:20-26                     result
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:13-59                   string password = du.GetPasswordByEmail(email)
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:84:20-28                   password
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:122-148                 getPassword(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:42-148                  "Security Question Challenge Successfully Completed! <br/>Your password is: " + getPassword(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:21-148                  labelPassword.Text = "Security Question Challenge Successfully Completed! <br/>Your password is: " + getPassword(txtEmail.Text)
+
+Trace 5 - HeaderInjection.aspx.cs:33:13-80:
+  WebGoat.NetWithCustomRule/WebGoat/Content/HeaderInjection.aspx.cs:33:31-80                  Request.Headers.ToString().Replace("&", "<br />")
+  WebGoat.NetWithCustomRule/WebGoat/Content/HeaderInjection.aspx.cs:33:13-80                  lblHeaders.Text = Request.Headers.ToString().Replace("&", "<br />")
+
+Trace 6 - MySqlDbProvider.cs:123:39-76:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:33:28-44                    txtUserName.Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:33:13-44                    string email = txtUserName.Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:38:42-47                    email
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:38:18-53                    du.IsValidCustomerLogin(email, pwd)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:112:49-54                      email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:118:13-145                     string sql = "select * from CustomerLogin where email = '" + email +
+                                                  "' and password = '" + encoded_password + "';"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:123:39-76                      new MySqlDataAdapter(sql, connection)
+
+Trace 7 - MySqlDbProvider.cs:204:44-77:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:89:41-80                   Request.Cookies["customerNumber"].Value
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:89:17-80                   string customerNumber = Request.Cookies["customerNumber"].Value
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:91:52-66                   customerNumber
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:91:32-67                   du.GetCustomerEmail(customerNumber)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:195:47-61                      customerNumber
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:203:21-108                     string sql = "select email from CustomerLogin where customerNumber = " + customerNumber
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:204:44-77                      new MySqlCommand(sql, connection)
+
+Trace 8 - MySqlDbProvider.cs:228:43-80:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/MainPage.aspx.cs:27:41-80                         Request.Cookies["customerNumber"].Value
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/MainPage.aspx.cs:27:17-80                         string customerNumber = Request.Cookies["customerNumber"].Value
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/MainPage.aspx.cs:29:52-66                         customerNumber
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/MainPage.aspx.cs:29:30-67                         du.GetCustomerDetails(customerNumber)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:215:50-64                      customerNumber
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:217:13-656                     string sql = "select Customers.customerNumber, Customers.customerName, Customers.logoFileName, Customers.contactLastName, Customers.contactFirstName, " +
+                                                  "Customers.phone, Customers.addressLine1, Customers.addressLine2, Customers.city, Customers.state, Customers.postalCode, Customers.country, " +
+                                                  "Customers.salesRepEmployeeNumber, Customers.creditLimit, CustomerLogin.email, CustomerLogin.password, CustomerLogin.question_id, CustomerLogin.answer " +
+                                                  "From Customers, CustomerLogin where Customers.customerNumber = CustomerLogin.customerNumber and Customers.customerNumber = " + customerNumber
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:228:43-80                      new MySqlDataAdapter(sql, connection)
+
+Trace 9 - MySqlDbProvider.cs:282:44-77:
+  WebGoat.NetWithCustomRule/WebGoat/Content/StoredXSS.aspx.cs:30:66-79                        txtEmail.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/StoredXSS.aspx.cs:30:40-97                        du.AddComment("user_cmt", txtEmail.Text, txtComment.Text)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:271:61-66                      email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:273:13-143                     string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:282:44-77                      new MySqlCommand(sql, connection)
+
+Trace 10 - MySqlDbProvider.cs:282:44-77:
+  WebGoat.NetWithCustomRule/WebGoat/Content/StoredXSS.aspx.cs:30:81-96                        txtComment.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/StoredXSS.aspx.cs:30:40-97                        du.AddComment("user_cmt", txtEmail.Text, txtComment.Text)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:271:75-82                      comment
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:273:13-143                     string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:282:44-77                      new MySqlCommand(sql, connection)
+
+Trace 11 - MySqlDbProvider.cs:282:44-77:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:82-95                   txtEmail.Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:40-113                  du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:271:61-66                      email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:273:13-143                     string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:282:44-77                      new MySqlCommand(sql, connection)
+
+Trace 12 - MySqlDbProvider.cs:282:44-77:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:97-112                  txtComment.Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:40-113                  du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:271:75-82                      comment
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:273:13-143                     string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:282:44-77                      new MySqlCommand(sql, connection)
+
+Trace 13 - MySqlDbProvider.cs:329:39-76:
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:27:63-76                   txtEmail.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:27:31-77                   du.GetSecurityQuestionAndAnswer(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:319:61-66                      email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:321:13-276                     string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                                                  "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                                                  "SecurityQuestions.question_id;"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:329:39-76                      new MySqlDataAdapter(sql, connection)
+
+Trace 14 - MySqlDbProvider.cs:329:39-76:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:28:63-76                   txtEmail.Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:28:31-77                   du.GetSecurityQuestionAndAnswer(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:319:61-66                      email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:321:13-276                     string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                                                  "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                                                  "SecurityQuestions.question_id;"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:329:39-76                      new MySqlDataAdapter(sql, connection)
+
+Trace 15 - MySqlDbProvider.cs:355:43-80:
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:66:134-147                 txtEmail.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:66:122-148                 getPassword(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:75:35-40                   email
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:77:53-58                   email
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:77:31-59                   du.GetPasswordByEmail(email)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:345:49-54                      email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:354:21-94                      string sql = "select * from CustomerLogin where email = '" + email + "';"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:355:43-80                      new MySqlDataAdapter(sql, connection)
+
+Trace 16 - MySqlDbProvider.cs:355:43-80:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:134-147                 txtEmail.Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:122-148                 getPassword(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:81:35-40                   email
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:53-58                   email
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:31-59                   du.GetPasswordByEmail(email)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:345:49-54                      email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:354:21-94                      string sql = "select * from CustomerLogin where email = '" + email + "';"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:355:43-80                      new MySqlDataAdapter(sql, connection)
+
+Trace 17 - MySqlDbProvider.cs:416:22-59:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:25-49                   Request["productNumber"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:13-49                   string id = Request["productNumber"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:47-49                   id
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:26-50                   du.GetProductDetails(id)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:406:49-60                      productCode
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:415:17-89                      sql = "select * from Products where productCode = '" + productCode + "'"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:416:22-59                      new MySqlDataAdapter(sql, connection)
+
+Trace 18 - MySqlDbProvider.cs:420:22-59:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:25-49                   Request["productNumber"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:13-49                   string id = Request["productNumber"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:47-49                   id
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:26-50                   du.GetProductDetails(id)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:406:49-60                      productCode
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:419:17-89                      sql = "select * from Comments where productCode = '" + productCode + "'"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:420:22-59                      new MySqlDataAdapter(sql, connection)
+
+Trace 19 - MySqlDbProvider.cs:522:39-76:
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjection.aspx.cs:25:27-39                     txtName.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjection.aspx.cs:25:13-39                     string name = txtName.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjection.aspx.cs:26:44-48                     name
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjection.aspx.cs:26:26-49                     du.GetEmailByName(name)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:515:46-50                      name
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:517:13-146                     string sql = "select firstName, lastName, email from Employees where firstName like '" + name + "%' or lastName like '" + name + "%'"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:522:39-76                      new MySqlDataAdapter(sql, connection)
+
+Trace 20 - MySqlDbProvider.cs:564:39-76:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:28-52                     context.Request["query"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:13-52                     string query = context.Request["query"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:27:47-52                     query
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:27:26-53                     du.GetCustomerEmails(query)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:557:49-54                      email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:559:13-93                      string sql = "select email from CustomerLogin where email like '" + email + "%'"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/MySqlDbProvider.cs:564:39-76                      new MySqlDataAdapter(sql, connection)
+
+Trace 21 - Orders.aspx.cs:114:17-48:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Orders.aspx.cs:114:29-48                          e.Row.Cells[0].Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Orders.aspx.cs:114:17-48                          link.Text = e.Row.Cells[0].Text
+
+Trace 22 - Orders.aspx.cs:83:25-126:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Orders.aspx.cs:62:38-60                           Request["orderNumber"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Orders.aspx.cs:62:17-60                           string orderNumber = Request["orderNumber"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Orders.aspx.cs:83:54-126                          "Error finding order number " + orderNumber + ". Details: " + ex.Message
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Orders.aspx.cs:83:25-126                          litErrorDetailMessage.Text = "Error finding order number " + orderNumber + ". Details: " + ex.Message
+
+Trace 23 - Orders.aspx.cs:91:35-77:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Orders.aspx.cs:88:39-55                           Request["image"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Orders.aspx.cs:88:17-55                           string target_image = Request["image"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Orders.aspx.cs:91:48-76                           Server.MapPath(target_image)
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Orders.aspx.cs:91:35-77                           new FileInfo(Server.MapPath(target_image))
+
+Trace 24 - PathManipulation.aspx.cs:43:25-71:
+  WebGoat.NetWithCustomRule/WebGoat/Content/PathManipulation.aspx.cs:33:29-60                 Request.QueryString["filename"]
+  WebGoat.NetWithCustomRule/WebGoat/Content/PathManipulation.aspx.cs:33:11-60                 string filename = Request.QueryString["filename"]
+  WebGoat.NetWithCustomRule/WebGoat/Content/PathManipulation.aspx.cs:43:42-71                 "File not found: " + filename
+  WebGoat.NetWithCustomRule/WebGoat/Content/PathManipulation.aspx.cs:43:25-71                 lblStatus.Text = "File not found: " + filename
+
+Trace 25 - PathManipulation.aspx.cs:53:34-112:
+  WebGoat.NetWithCustomRule/WebGoat/Content/PathManipulation.aspx.cs:33:29-60                 Request.QueryString["filename"]
+  WebGoat.NetWithCustomRule/WebGoat/Content/PathManipulation.aspx.cs:33:11-60                 string filename = Request.QueryString["filename"]
+  WebGoat.NetWithCustomRule/WebGoat/Content/PathManipulation.aspx.cs:38:75-100                "~/Downloads/" + filename
+  WebGoat.NetWithCustomRule/WebGoat/Content/PathManipulation.aspx.cs:38:67-101                MapPath("~/Downloads/" + filename)
+  WebGoat.NetWithCustomRule/WebGoat/Content/PathManipulation.aspx.cs:38:25-107                ResponseFile(Request, Response, filename, MapPath("~/Downloads/" + filename), 100)
+  WebGoat.NetWithCustomRule/WebGoat/Content/PathManipulation.aspx.cs:49:112-121               _fullPath
+  WebGoat.NetWithCustomRule/WebGoat/Content/PathManipulation.aspx.cs:53:34-112                new FileStream(_fullPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)
+
+Trace 26 - ReflectedXSS.aspx.cs:26:13-80:
+  WebGoat.NetWithCustomRule/WebGoat/Content/ReflectedXSS.aspx.cs:20:26-41                     Request["city"]
+  WebGoat.NetWithCustomRule/WebGoat/Content/ReflectedXSS.aspx.cs:20:17-42                     LoadCity(Request["city"])
+  WebGoat.NetWithCustomRule/WebGoat/Content/ReflectedXSS.aspx.cs:23:25-29                     city
+  WebGoat.NetWithCustomRule/WebGoat/Content/ReflectedXSS.aspx.cs:26:30-80                     "Here are the details for our " + city + " Office"
+  WebGoat.NetWithCustomRule/WebGoat/Content/ReflectedXSS.aspx.cs:26:13-80                     lblOutput.Text = "Here are the details for our " + city + " Office"
+
+Trace 27 - SQLInjectionDiscovery.aspx.cs:30:17-106:
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjectionDiscovery.aspx.cs:27:31-41            txtID.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjectionDiscovery.aspx.cs:27:17-57            string name = txtID.Text.Substring(0, 3)
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjectionDiscovery.aspx.cs:28:61-65            name
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjectionDiscovery.aspx.cs:28:33-66            du.GetEmailByCustomerNumber(name)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:544:55-58                     num
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:554:21-97                     string sql = "select email from CustomerLogin where customerNumber = " + num
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:555:21-75                     SqliteCommand cmd = new SqliteCommand(sql, connection)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:556:38-57                     cmd.ExecuteScalar()
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:556:21-57                     output = (string)cmd.ExecuteScalar()
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:566:20-26                     output
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjectionDiscovery.aspx.cs:28:17-66            string output = du.GetEmailByCustomerNumber(name)
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjectionDiscovery.aspx.cs:30:34-106           String.IsNullOrEmpty(output) ? "Customer Number does not exist" : output
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjectionDiscovery.aspx.cs:30:17-106           lblOutput.Text = String.IsNullOrEmpty(output) ? "Customer Number does not exist" : output
+
+Trace 28 - SqliteDbProvider.cs:191:45-79:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:89:41-80                   Request.Cookies["customerNumber"].Value
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:89:17-80                   string customerNumber = Request.Cookies["customerNumber"].Value
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:91:52-66                   customerNumber
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:91:32-67                   du.GetCustomerEmail(customerNumber)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:180:47-61                     customerNumber
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:190:21-108                    string sql = "select email from CustomerLogin where customerNumber = " + customerNumber
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:191:45-79                     new SqliteCommand(sql, connection)
+
+Trace 29 - SqliteDbProvider.cs:217:44-82:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/MainPage.aspx.cs:27:41-80                         Request.Cookies["customerNumber"].Value
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/MainPage.aspx.cs:27:17-80                         string customerNumber = Request.Cookies["customerNumber"].Value
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/MainPage.aspx.cs:29:52-66                         customerNumber
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/MainPage.aspx.cs:29:30-67                         du.GetCustomerDetails(customerNumber)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:202:50-64                     customerNumber
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:204:13-656                    string sql = "select Customers.customerNumber, Customers.customerName, Customers.logoFileName, Customers.contactLastName, Customers.contactFirstName, " +
+                                                  "Customers.phone, Customers.addressLine1, Customers.addressLine2, Customers.city, Customers.state, Customers.postalCode, Customers.country, " +
+                                                  "Customers.salesRepEmployeeNumber, Customers.creditLimit, CustomerLogin.email, CustomerLogin.password, CustomerLogin.question_id, CustomerLogin.answer " +
+                                                  "From Customers, CustomerLogin where Customers.customerNumber = CustomerLogin.customerNumber and Customers.customerNumber = " + customerNumber
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:217:44-82                     new SqliteDataAdapter(sql, connection)
+
+Trace 30 - SqliteDbProvider.cs:274:45-79:
+  WebGoat.NetWithCustomRule/WebGoat/Content/StoredXSS.aspx.cs:30:66-79                        txtEmail.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/StoredXSS.aspx.cs:30:40-97                        du.AddComment("user_cmt", txtEmail.Text, txtComment.Text)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:263:61-66                     email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:265:13-143                    string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:274:45-79                     new SqliteCommand(sql, connection)
+
+Trace 31 - SqliteDbProvider.cs:274:45-79:
+  WebGoat.NetWithCustomRule/WebGoat/Content/StoredXSS.aspx.cs:30:81-96                        txtComment.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/StoredXSS.aspx.cs:30:40-97                        du.AddComment("user_cmt", txtEmail.Text, txtComment.Text)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:263:75-82                     comment
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:265:13-143                    string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:274:45-79                     new SqliteCommand(sql, connection)
+
+Trace 32 - SqliteDbProvider.cs:274:45-79:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:82-95                   txtEmail.Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:40-113                  du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:263:61-66                     email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:265:13-143                    string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:274:45-79                     new SqliteCommand(sql, connection)
+
+Trace 33 - SqliteDbProvider.cs:274:45-79:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:97-112                  txtComment.Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:40-113                  du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:263:75-82                     comment
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:265:13-143                    string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:274:45-79                     new SqliteCommand(sql, connection)
+
+Trace 34 - SqliteDbProvider.cs:325:40-78:
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:27:63-76                   txtEmail.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:27:31-77                   du.GetSecurityQuestionAndAnswer(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:313:61-66                     email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:315:13-276                    string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                                                  "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                                                  "SecurityQuestions.question_id;"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:325:40-78                     new SqliteDataAdapter(sql, connection)
+
+Trace 35 - SqliteDbProvider.cs:325:40-78:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:28:63-76                   txtEmail.Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:28:31-77                   du.GetSecurityQuestionAndAnswer(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:313:61-66                     email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:315:13-276                    string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                                                  "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                                                  "SecurityQuestions.question_id;"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:325:40-78                     new SqliteDataAdapter(sql, connection)
+
+Trace 36 - SqliteDbProvider.cs:353:44-82:
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:66:134-147                 txtEmail.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:66:122-148                 getPassword(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:75:35-40                   email
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:77:53-58                   email
+  WebGoat.NetWithCustomRule/WebGoat/Content/ForgotPassword.aspx.cs:77:31-59                   du.GetPasswordByEmail(email)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:341:49-54                     email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:352:21-94                     string sql = "select * from CustomerLogin where email = '" + email + "';"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:353:44-82                     new SqliteDataAdapter(sql, connection)
+
+Trace 37 - SqliteDbProvider.cs:353:44-82:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:134-147                 txtEmail.Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:122-148                 getPassword(txtEmail.Text)
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:81:35-40                   email
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:53-58                   email
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:31-59                   du.GetPasswordByEmail(email)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:341:49-54                     email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:352:21-94                     string sql = "select * from CustomerLogin where email = '" + email + "';"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:353:44-82                     new SqliteDataAdapter(sql, connection)
+
+Trace 38 - SqliteDbProvider.cs:420:22-60:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:25-49                   Request["productNumber"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:13-49                   string id = Request["productNumber"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:47-49                   id
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:26-50                   du.GetProductDetails(id)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:408:49-60                     productCode
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:419:17-89                     sql = "select * from Products where productCode = '" + productCode + "'"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:420:22-60                     new SqliteDataAdapter(sql, connection)
+
+Trace 39 - SqliteDbProvider.cs:424:22-60:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:25-49                   Request["productNumber"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:13-49                   string id = Request["productNumber"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:47-49                   id
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:26-50                   du.GetProductDetails(id)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:408:49-60                     productCode
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:423:17-89                     sql = "select * from Comments where productCode = '" + productCode + "'"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:424:22-60                     new SqliteDataAdapter(sql, connection)
+
+Trace 40 - SqliteDbProvider.cs:533:40-78:
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjection.aspx.cs:25:27-39                     txtName.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjection.aspx.cs:25:13-39                     string name = txtName.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjection.aspx.cs:26:44-48                     name
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjection.aspx.cs:26:26-49                     du.GetEmailByName(name)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:524:46-50                     name
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:526:13-146                    string sql = "select firstName, lastName, email from Employees where firstName like '" + name + "%' or lastName like '" + name + "%'"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:533:40-78                     new SqliteDataAdapter(sql, connection)
+
+Trace 41 - SqliteDbProvider.cs:555:41-75:
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjectionDiscovery.aspx.cs:27:31-41            txtID.Text
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjectionDiscovery.aspx.cs:27:17-57            string name = txtID.Text.Substring(0, 3)
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjectionDiscovery.aspx.cs:28:61-65            name
+  WebGoat.NetWithCustomRule/WebGoat/Content/SQLInjectionDiscovery.aspx.cs:28:33-66            du.GetEmailByCustomerNumber(name)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:544:55-58                     num
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:554:21-97                     string sql = "select email from CustomerLogin where customerNumber = " + num
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:555:41-75                     new SqliteCommand(sql, connection)
+
+Trace 42 - SqliteDbProvider.cs:578:40-78:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:28-52                     context.Request["query"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:13-52                     string query = context.Request["query"]
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:27:47-52                     query
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/Autocomplete.ashx.cs:27:26-53                     du.GetCustomerEmails(query)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:569:49-54                     email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:571:13-93                     string sql = "select email from CustomerLogin where email like '" + email + "%'"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:578:40-78                     new SqliteDataAdapter(sql, connection)
+
+Trace 43 - SqliteDbProvider.cs:86:40-78:
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:33:28-44                    txtUserName.Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:33:13-44                    string email = txtUserName.Text
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:38:42-47                    email
+  WebGoat.NetWithCustomRule/WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:38:18-53                    du.IsValidCustomerLogin(email, pwd)
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:73:49-54                      email
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:79:13-154                     string sql = "select * from CustomerLogin where email = '" + email + "' and password = '" +
+                                                  encoded_password + "';"
+  WebGoat.NetWithCustomRule/WebGoat/App_Code/DB/SqliteDbProvider.cs:86:40-78                      new SqliteDataAdapter(sql, connection)

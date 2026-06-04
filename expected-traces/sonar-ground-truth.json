@@ -1,0 +1,378 @@
+{
+  "benchmark": "WebGoat.Net",
+  "version": "1c6cab19f9029673cd98ba8624bf9cc91d04bae9",
+  "language": "CSHARP",
+  "expectedIssues": {
+    "csharpsquid:S2068": [
+      {
+        "fileId": "WebGoat.Net:Content/EncryptVSEncode.aspx.cs",
+        "lines": [
+          28
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:Web.config",
+        "lines": [
+          58,
+          59
+        ]
+      }
+    ],
+    "xml:S2068": [
+      {
+        "fileId": "WebGoat.Net:Web.config",
+        "lines": [
+          58,
+          59,
+          60
+        ]
+      }
+    ],
+    "csharpsquid:S2077": [
+      {
+        "fileId": "WebGoat.Net:App_Code/DB/MySqlDbProvider.cs",
+        "lines": [
+          123,
+          156,
+          204,
+          228,
+          282,
+          304,
+          329,
+          355,
+          395,
+          416,
+          420,
+          447,
+          463,
+          496,
+          500,
+          522,
+          539,
+          564
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:App_Code/DB/SqliteDbProvider.cs",
+        "lines": [
+          86,
+          141,
+          191,
+          217,
+          274,
+          298,
+          325,
+          353,
+          397,
+          420,
+          424,
+          453,
+          471,
+          505,
+          509,
+          533,
+          555,
+          578
+        ]
+      }
+    ],
+    "roslyn.sonaranalyzer.security.cs:S2083": [
+      {
+        "fileId": "WebGoat.Net:Content/PathManipulation.aspx.cs",
+        "lines": [
+          53
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:WebGoatCoins/Orders.aspx.cs",
+        "lines": [
+          91
+        ]
+      }
+    ],
+    "roslyn.sonaranalyzer.security.cs:S2091": [
+      {
+        "fileId": "WebGoat.Net:Content/XPathInjection.aspx.cs",
+        "lines": [
+          28
+        ]
+      }
+    ],
+    "csharpsquid:S2092": [
+      {
+        "fileId": "WebGoat.Net:App_Code/CookieManager.cs",
+        "lines": [
+          18
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:WebGoatCoins/CustomerLogin.aspx.cs",
+        "lines": [
+          59
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:Content/ForgotPassword.aspx.cs",
+        "lines": [
+          42
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:Content/HeaderInjection.aspx.cs",
+        "lines": [
+          18
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:Default.aspx.cs",
+        "lines": [
+          28
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:WebGoatCoins/ForgotPassword.aspx.cs",
+        "lines": [
+          43
+        ]
+      }
+    ],
+    "roslyn.sonaranalyzer.security.cs:S2598": [
+      {
+        "fileId": "WebGoat.Net:Content/UploadPathManipulation.aspx.cs",
+        "lines": [
+          25
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:WebGoatCoins/MainPage.aspx.cs",
+        "lines": [
+          59
+        ]
+      }
+    ],
+    "roslyn.sonaranalyzer.security.cs:S2631": [
+      {
+        "fileId": "WebGoat.Net:Content/RegexDoS.aspx.cs",
+        "lines": [
+          23
+        ]
+      }
+    ],
+    "csharpsquid:S3330": [
+      {
+        "fileId": "WebGoat.Net:App_Code/CookieManager.cs",
+        "lines": [
+          18
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:WebGoatCoins/CustomerLogin.aspx.cs",
+        "lines": [
+          59
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:Content/ForgotPassword.aspx.cs",
+        "lines": [
+          42
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:Content/HeaderInjection.aspx.cs",
+        "lines": [
+          18
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:Default.aspx.cs",
+        "lines": [
+          28
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:WebGoatCoins/ForgotPassword.aspx.cs",
+        "lines": [
+          43
+        ]
+      }
+    ],
+    "roslyn.sonaranalyzer.security.cs:S3649": [
+      {
+        "fileId": "WebGoat.Net:App_Code/DB/MySqlDbProvider.cs",
+        "lines": [
+          123,
+          204,
+          228,
+          282,
+          329,
+          355,
+          416,
+          420,
+          522,
+          539,
+          564
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:App_Code/DB/SqliteDbProvider.cs",
+        "lines": [
+          86,
+          191,
+          217,
+          274,
+          325,
+          353,
+          420,
+          424,
+          533,
+          555,
+          578
+        ]
+      }
+    ],
+    "verb_tampering": [
+      {
+        "fileId": "WebGoat.Net:Web.config",
+        "lines": [
+          167,
+          168
+        ]
+      }
+    ],
+    "xml:S4507": [
+      {
+        "fileId": "WebGoat.Net:Web.config",
+        "lines": [
+          53
+        ]
+      }
+    ],
+    "roslyn.sonaranalyzer.security.cs:S5131": [
+      {
+        "fileId": "WebGoat.Net:Content/HeaderInjection.aspx.cs",
+        "lines": [
+          33
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:Content/PathManipulation.aspx.cs",
+        "lines": [
+          43
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:Content/ReflectedXSS.aspx.cs",
+        "lines": [
+          26
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:Content/StoredXSS.aspx.cs",
+        "lines": [
+          52
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:WebGoatCoins/ProductDetails.aspx.cs",
+        "lines": [
+          82,
+          83
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:WebGoatCoins/Orders.aspx.cs",
+        "lines": [
+          83
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:ProxySetup.aspx.cs",
+        "lines": [
+          17
+        ]
+      }
+    ],
+    "roslyn.sonaranalyzer.security.cs:S5145": [
+      {
+        "fileId": "WebGoat.Net:App_Code/WeakMessageDigest.cs",
+        "lines": [
+          26
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:Content/MessageDigest.aspx.cs",
+        "lines": [
+          25
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:WebGoatCoins/CustomerLogin.aspx.cs",
+        "lines": [
+          36
+        ]
+      }
+    ],
+    "roslyn.sonaranalyzer.security.cs:S5146": [
+      {
+        "fileId": "WebGoat.Net:WebGoatCoins/CustomerLogin.aspx.cs",
+        "lines": [
+          72
+        ]
+      }
+    ],
+    "csharpsquid:S4790": [
+      {
+        "fileId": "WebGoat.Net:Content/EncryptVSEncode.aspx.cs",
+        "lines": [
+          102
+        ]
+      }
+    ],
+    "xml:S5344": [
+      {
+        "fileId": "WebGoat.Net:Web.config",
+        "lines": [
+          57
+        ]
+      }
+    ],
+    "roslyn.sonaranalyzer.security.cs:S6399": [
+      {
+        "fileId": "WebGoat.Net:Content/XMLInjection.aspx.cs",
+        "lines": [
+          75
+        ]
+      }
+    ],
+    "csharpsquid:S6640": [
+      {
+        "fileId": "WebGoat.Net:Content/Unsafe.aspx.cs",
+        "lines": [
+          12
+        ]
+      }
+    ],
+    "own-rolled-hash": [
+      {
+        "fileId": "WebGoat.Net:App_Code/WeakMessageDigest.cs",
+        "lines": [
+          14
+        ]
+      }
+    ],
+    "own-rolled-rng": [
+      {
+        "fileId": "WebGoat.Net:App_Code/VeryWeakRandom.cs",
+        "lines": [
+          5
+        ]
+      },
+      {
+        "fileId": "WebGoat.Net:App_Code/WeakRandom.cs",
+        "lines": [
+          5
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,564 @@
+Trace 0 - SQLiteMembershipProvider.cs:1128:24-248:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1128:36-48            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1128:24-248           "UPDATE " + USER_TB_NAME +
+                                                  " SET Email = $Email, LoweredEmail = $LoweredEmail, Comment = $Comment," +
+                                                  " IsApproved = $IsApproved" +
+                                                  " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 1 - SQLiteMembershipProvider.cs:1174:25-196:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1174:37-49            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1174:25-196           "UPDATE " + USER_TB_NAME
+                                                  + " SET LastActivityDate = $UtcNow, LastLoginDate = $UtcNow"
+                                                  + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 2 - SQLiteMembershipProvider.cs:1211:24-152:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1211:50-62            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1211:24-152           "SELECT Count(*) FROM " + USER_TB_NAME +
+                                                  "WHERE LoweredUsername LIKE $UsernameSearch AND ApplicationId = $ApplicationId"
+
+Trace 3 - SQLiteMembershipProvider.cs:1228:24-373:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1231:20-32            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1228:24-373           "SELECT UserId, Username, Email, PasswordQuestion,"
+                                                  + " Comment, IsApproved, IsLockedOut, CreateDate, LastLoginDate,"
+                                                  + " LastActivityDate, LastPasswordChangedDate, LastLockoutDate "
+                                                  + " FROM " + USER_TB_NAME
+                                                  + " WHERE LoweredUsername LIKE $UsernameSearch AND ApplicationId = $ApplicationId "
+                                                  + " ORDER BY Username Asc"
+
+Trace 4 - SQLiteMembershipProvider.cs:1277:24-145:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1277:50-62            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1277:24-145           "SELECT Count(*) FROM " + USER_TB_NAME
+                                                  + " WHERE LoweredEmail LIKE $EmailSearch AND ApplicationId = $ApplicationId"
+
+Trace 5 - SQLiteMembershipProvider.cs:1294:24-365:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1297:20-32            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1294:24-365           "SELECT UserId, Username, Email, PasswordQuestion,"
+                                                  + " Comment, IsApproved, IsLockedOut, CreateDate, LastLoginDate,"
+                                                  + " LastActivityDate, LastPasswordChangedDate, LastLockoutDate"
+                                                  + " FROM " + USER_TB_NAME
+                                                  + " WHERE LoweredEmail LIKE $EmailSearch AND ApplicationId = $ApplicationId"
+                                                  + " ORDER BY Username Asc"
+
+Trace 6 - SQLiteMembershipProvider.cs:1358:24-159:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1358:41-52            APP_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1358:24-159           "INSERT INTO " + APP_TB_NAME + " (ApplicationId, ApplicationName, Description) VALUES ($ApplicationId, $ApplicationName, $Description)"
+
+Trace 7 - SQLiteMembershipProvider.cs:1472:24-308:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1474:21-33            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1472:24-308           "SELECT FailedPasswordAttemptCount, FailedPasswordAttemptWindowStart, "
+                                                  + "  FailedPasswordAnswerAttemptCount, FailedPasswordAnswerAttemptWindowStart, IsLockedOut "
+                                                  + "  FROM " + USER_TB_NAME
+                                                  + "  WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 8 - SQLiteMembershipProvider.cs:1507:26-348:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1507:38-50            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1507:26-348           "UPDATE " + USER_TB_NAME
+                                                  + " SET FailedPasswordAttemptCount = 0, FailedPasswordAttemptWindowStart = $MinDate, "
+                                                  + " FailedPasswordAnswerAttemptCount = 0, FailedPasswordAnswerAttemptWindowStart = $MinDate, IsLockedOut = '0' "
+                                                  + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 9 - SQLiteMembershipProvider.cs:1542:26-256:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1542:38-50            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1542:26-256           "UPDATE " + USER_TB_NAME
+                                                  + "  SET FailedPasswordAttemptCount = $Count, "
+                                                  + "      FailedPasswordAttemptWindowStart = $WindowStart "
+                                                  + "  WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 10 - SQLiteMembershipProvider.cs:1548:26-268:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1548:38-50            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1548:26-268           "UPDATE " + USER_TB_NAME
+                                                  + "  SET FailedPasswordAnswerAttemptCount = $Count, "
+                                                  + "      FailedPasswordAnswerAttemptWindowStart = $WindowStart "
+                                                  + "  WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 11 - SQLiteMembershipProvider.cs:1564:26-243:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1564:38-50            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1564:26-243           "UPDATE " + USER_TB_NAME
+                                                  + "  SET IsLockedOut = '1', LastLockoutDate = $LastLockoutDate, FailedPasswordAttemptCount = $Count "
+                                                  + "  WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 12 - SQLiteMembershipProvider.cs:1581:27-190:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1581:39-51            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1581:27-190           "UPDATE " + USER_TB_NAME
+                                                  + "  SET FailedPasswordAttemptCount = $Count"
+                                                  + "  WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 13 - SQLiteMembershipProvider.cs:1586:27-196:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1586:39-51            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1586:27-196           "UPDATE " + USER_TB_NAME
+                                                  + "  SET FailedPasswordAnswerAttemptCount = $Count"
+                                                  + "  WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 14 - SQLiteMembershipProvider.cs:1678:24-308:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1680:20-32            USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1678:24-308           "SELECT Password, PasswordFormat, PasswordSalt, FailedPasswordAttemptCount,"
+                                                  + " FailedPasswordAnswerAttemptCount, IsApproved, IsLockedOut, LastLoginDate, LastActivityDate"
+                                                  + " FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 15 - SQLiteMembershipProvider.cs:350:24-233:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:350:36-48             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:350:24-233            "UPDATE " + USER_TB_NAME +
+                                                  " SET Password = $Password, LastPasswordChangedDate = $LastPasswordChangedDate " +
+                                                  " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 16 - SQLiteMembershipProvider.cs:407:24-214:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:407:36-48             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:407:24-214            "UPDATE " + USER_TB_NAME +
+                                                  " SET PasswordQuestion = $Question, PasswordAnswer = $Answer" +
+                                                  " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 17 - SQLiteMembershipProvider.cs:551:25-1066:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:551:42-54             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:551:25-1066           "INSERT INTO " + USER_TB_NAME +
+                                                  " (UserId, Username, LoweredUsername, ApplicationId, Email, LoweredEmail, Comment, Password, " +
+                                                  " PasswordFormat, PasswordSalt, PasswordQuestion, PasswordAnswer, IsApproved, IsAnonymous, " +
+                                                  " LastActivityDate, LastLoginDate, LastPasswordChangedDate, CreateDate, " +
+                                                  " IsLockedOut, LastLockoutDate, FailedPasswordAttemptCount, FailedPasswordAttemptWindowStart, " +
+                                                  " FailedPasswordAnswerAttemptCount, FailedPasswordAnswerAttemptWindowStart) " +
+                                                  " Values ($UserId, $Username, $LoweredUsername, $ApplicationId, $Email, $LoweredEmail, $Comment, $Password, " +
+                                                  " $PasswordFormat, $PasswordSalt, $PasswordQuestion, $PasswordAnswer, $IsApproved, $IsAnonymous, " +
+                                                  " $LastActivityDate, $LastLoginDate, $LastPasswordChangedDate, $CreateDate, " +
+                                                  " $IsLockedOut, $LastLockoutDate, $FailedPasswordAttemptCount, $FailedPasswordAttemptWindowStart, " +
+                                                  " $FailedPasswordAnswerAttemptCount, $FailedPasswordAnswerAttemptWindowStart)"
+
+Trace 18 - SQLiteMembershipProvider.cs:635:25-135:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:635:49-61             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:635:25-135            "SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 19 - SQLiteMembershipProvider.cs:643:24-127:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:643:41-53             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:643:24-127            "DELETE FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 20 - SQLiteMembershipProvider.cs:652:25-92:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:652:42-64             USERS_IN_ROLES_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:652:25-92             "DELETE FROM " + USERS_IN_ROLES_TB_NAME + " WHERE UserId = $UserId"
+
+Trace 21 - SQLiteMembershipProvider.cs:658:25-85:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:658:42-57             PROFILE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:658:25-85             "DELETE FROM " + PROFILE_TB_NAME + " WHERE UserId = $UserId"
+
+Trace 22 - SQLiteMembershipProvider.cs:686:24-124:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:686:50-62             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:686:24-124            "SELECT Count(*) FROM " + USER_TB_NAME + " WHERE ApplicationId = $ApplicationId AND IsAnonymous='0'"
+
+Trace 23 - SQLiteMembershipProvider.cs:700:24-372:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:703:22-34             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:700:24-372            "SELECT UserId, Username, Email, PasswordQuestion," +
+                                                  " Comment, IsApproved, IsLockedOut, CreateDate, LastLoginDate," +
+                                                  " LastActivityDate, LastPasswordChangedDate, LastLockoutDate " +
+                                                  " FROM " + USER_TB_NAME +
+                                                  " WHERE ApplicationId = $ApplicationId AND IsAnonymous='0' " +
+                                                  " ORDER BY Username Asc"
+
+Trace 24 - SQLiteMembershipProvider.cs:745:24-157:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:745:50-62             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:745:24-157            "SELECT Count(*) FROM " + USER_TB_NAME +
+                                                  " WHERE LastActivityDate > $LastActivityDate AND ApplicationId = $ApplicationId"
+
+Trace 25 - SQLiteMembershipProvider.cs:786:24-201:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:787:9-21              USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:786:24-201            "SELECT Password, PasswordFormat, PasswordSalt, PasswordAnswer, IsLockedOut FROM "
+                                                  + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 26 - SQLiteMembershipProvider.cs:845:24-323:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:848:20-32             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:845:24-323            "SELECT UserId, Username, Email, PasswordQuestion,"
+                                                  + " Comment, IsApproved, IsLockedOut, CreateDate, LastLoginDate,"
+                                                  + " LastActivityDate, LastPasswordChangedDate, LastLockoutDate"
+                                                  + " FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 27 - SQLiteMembershipProvider.cs:866:25-183:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:866:37-49             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:866:25-183            "UPDATE " + USER_TB_NAME
+                                                  + " SET LastActivityDate = $LastActivityDate"
+                                                  + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 28 - SQLiteMembershipProvider.cs:896:24-277:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:899:20-32             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:896:24-277            "SELECT UserId, Username, Email, PasswordQuestion,"
+                                                  + " Comment, IsApproved, IsLockedOut, CreateDate, LastLoginDate,"
+                                                  + " LastActivityDate, LastPasswordChangedDate, LastLockoutDate"
+                                                  + " FROM " + USER_TB_NAME + " WHERE UserId = $UserId"
+
+Trace 29 - SQLiteMembershipProvider.cs:916:25-137:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:916:37-49             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:916:25-137            "UPDATE " + USER_TB_NAME
+                                                  + " SET LastActivityDate = $LastActivityDate"
+                                                  + " WHERE UserId = $UserId"
+
+Trace 30 - SQLiteMembershipProvider.cs:942:24-349:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:942:36-48             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:942:24-349            "UPDATE " + USER_TB_NAME
+                                                  + " SET IsLockedOut = '0', FailedPasswordAttemptCount = 0,"
+                                                  + " FailedPasswordAttemptWindowStart = $MinDate, FailedPasswordAnswerAttemptCount = 0,"
+                                                  + " FailedPasswordAnswerAttemptWindowStart = $MinDate"
+                                                  + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 31 - SQLiteMembershipProvider.cs:978:24-141:
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:979:18-30             USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:978:24-141            "SELECT Username" +
+                                                  " FROM " + USER_TB_NAME + " WHERE LoweredEmail = $Email AND ApplicationId = $ApplicationId"
+
+Trace 32 - SQLiteProfileProvider.cs:205:24-135:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:205:48-60                USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:205:24-135               "SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId;"
+
+Trace 33 - SQLiteProfileProvider.cs:222:24-93:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:222:50-65                PROFILE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:222:24-93                "SELECT COUNT(*) FROM " + PROFILE_TB_NAME + " WHERE UserId = $UserId"
+
+Trace 34 - SQLiteProfileProvider.cs:227:25-243:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:227:37-52                PROFILE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:227:25-243               "UPDATE " + PROFILE_TB_NAME + " SET PropertyNames = $PropertyNames, PropertyValuesString = $PropertyValuesString, PropertyValuesBinary = $PropertyValuesBinary, LastUpdatedDate = $LastUpdatedDate WHERE UserId = $UserId"
+
+Trace 35 - SQLiteProfileProvider.cs:229:25-244:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:229:42-57                PROFILE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:229:25-244               "INSERT INTO " + PROFILE_TB_NAME + " (UserId, PropertyNames, PropertyValuesString, PropertyValuesBinary, LastUpdatedDate) VALUES ($UserId, $PropertyNames, $PropertyValuesString, $PropertyValuesBinary, $LastUpdatedDate)"
+
+Trace 36 - SQLiteProfileProvider.cs:241:24-117:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:241:36-48                USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:241:24-117               "UPDATE " + USER_TB_NAME + " SET LastActivityDate = $LastActivityDate WHERE UserId = $UserId"
+
+Trace 37 - SQLiteProfileProvider.cs:381:24-290:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:381:41-56                PROFILE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:381:24-290               "DELETE FROM " + PROFILE_TB_NAME + " WHERE UserId IN (SELECT UserId FROM " + USER_TB_NAME
+                                                  + " WHERE ApplicationId = $ApplicationId AND LastActivityDate <= $LastActivityDate"
+                                                  + GetClauseForAuthenticationOptions (authenticationOption) + ")"
+
+Trace 38 - SQLiteProfileProvider.cs:381:24-290:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:381:101-113              USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:381:24-290               "DELETE FROM " + PROFILE_TB_NAME + " WHERE UserId IN (SELECT UserId FROM " + USER_TB_NAME
+                                                  + " WHERE ApplicationId = $ApplicationId AND LastActivityDate <= $LastActivityDate"
+                                                  + GetClauseForAuthenticationOptions (authenticationOption) + ")"
+
+Trace 39 - SQLiteProfileProvider.cs:412:24-281:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:412:50-62                USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:412:24-281               "SELECT COUNT(*) FROM " + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p " +
+                                                  "WHERE u.ApplicationId = $ApplicationId AND u.LastActivityDate <= $LastActivityDate AND u.UserId = p.UserId" + GetClauseForAuthenticationOptions (authenticationOption)
+
+Trace 40 - SQLiteProfileProvider.cs:412:24-281:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:412:74-89                PROFILE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:412:24-281               "SELECT COUNT(*) FROM " + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p " +
+                                                  "WHERE u.ApplicationId = $ApplicationId AND u.LastActivityDate <= $LastActivityDate AND u.UserId = p.UserId" + GetClauseForAuthenticationOptions (authenticationOption)
+
+Trace 41 - SQLiteProfileProvider.cs:551:23-1130:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:551:40-52                USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:551:23-1130              "INSERT INTO " + USER_TB_NAME
+                                                  + " (UserId, Username, LoweredUsername, ApplicationId, Email, LoweredEmail, Comment, Password,"
+                                                  + " PasswordFormat, PasswordSalt, PasswordQuestion,"
+                                                  + " PasswordAnswer, IsApproved, IsAnonymous,"
+                                                  + " CreateDate, LastPasswordChangedDate, LastActivityDate,"
+                                                  + " LastLoginDate, IsLockedOut, LastLockoutDate,"
+                                                  + " FailedPasswordAttemptCount, FailedPasswordAttemptWindowStart,"
+                                                  + " FailedPasswordAnswerAttemptCount, FailedPasswordAnswerAttemptWindowStart)"
+                                                  + " Values($UserId, $Username, $LoweredUsername, $ApplicationId, $Email, $LoweredEmail, $Comment, $Password,"
+                                                  + " $PasswordFormat, $PasswordSalt, $PasswordQuestion, $PasswordAnswer, $IsApproved, $IsAnonymous, $CreateDate, $LastPasswordChangedDate,"
+                                                  + " $LastActivityDate, $LastLoginDate, $IsLockedOut, $LastLockoutDate,"
+                                                  + " $FailedPasswordAttemptCount, $FailedPasswordAttemptWindowStart,"
+                                                  + " $FailedPasswordAnswerAttemptCount, $FailedPasswordAnswerAttemptWindowStart)"
+
+Trace 42 - SQLiteProfileProvider.cs:644:24-134:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:644:48-60                USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:644:24-134               "SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $UserName AND ApplicationId = $ApplicationId"
+
+Trace 43 - SQLiteProfileProvider.cs:655:25-143:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:655:100-115              PROFILE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:655:25-143               "SELECT PropertyNames, PropertyValuesString, PropertyValuesBinary FROM " + PROFILE_TB_NAME + " WHERE UserId = $UserId"
+
+Trace 44 - SQLiteProfileProvider.cs:670:25-118:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:670:37-49                USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:670:25-118               "UPDATE " + USER_TB_NAME + " SET LastActivityDate = $LastActivityDate WHERE UserId = $UserId"
+
+Trace 45 - SQLiteProfileProvider.cs:715:25-160:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:715:42-53                APP_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:715:25-160               "INSERT INTO " + APP_TB_NAME + " (ApplicationId, ApplicationName, Description) VALUES ($ApplicationId, $ApplicationName, $Description)"
+
+Trace 46 - SQLiteProfileProvider.cs:769:24-32:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:441:11-19                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:441:4-355                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
+                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId "
+                                                  + GetClauseForAuthenticationOptions (authenticationOption)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:450:32-40                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:450:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
+
+Trace 47 - SQLiteProfileProvider.cs:769:24-32:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:442:15-27                USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:441:4-355                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
+                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId "
+                                                  + GetClauseForAuthenticationOptions (authenticationOption)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:450:32-40                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:450:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
+
+Trace 48 - SQLiteProfileProvider.cs:769:24-32:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:442:39-54                PROFILE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:441:4-355                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
+                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId "
+                                                  + GetClauseForAuthenticationOptions (authenticationOption)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:450:32-40                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:450:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
+
+Trace 49 - SQLiteProfileProvider.cs:769:24-32:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:466:11-19                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:466:4-398                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
+                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.LastActivityDate <= $LastActivityDate"
+                                                  + GetClauseForAuthenticationOptions (authenticationOption)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:479:32-40                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:479:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
+
+Trace 50 - SQLiteProfileProvider.cs:769:24-32:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:467:15-27                USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:466:4-398                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
+                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.LastActivityDate <= $LastActivityDate"
+                                                  + GetClauseForAuthenticationOptions (authenticationOption)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:479:32-40                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:479:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
+
+Trace 51 - SQLiteProfileProvider.cs:769:24-32:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:467:39-54                PROFILE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:466:4-398                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
+                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.LastActivityDate <= $LastActivityDate"
+                                                  + GetClauseForAuthenticationOptions (authenticationOption)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:479:32-40                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:479:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
+
+Trace 52 - SQLiteProfileProvider.cs:769:24-32:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:495:11-19                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:495:4-391                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
+                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.LoweredUserName LIKE $UserName"
+                                                  + GetClauseForAuthenticationOptions (authenticationOption)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:508:32-40                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:508:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
+
+Trace 53 - SQLiteProfileProvider.cs:769:24-32:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:496:15-27                USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:495:4-391                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
+                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.LoweredUserName LIKE $UserName"
+                                                  + GetClauseForAuthenticationOptions (authenticationOption)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:508:32-40                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:508:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
+
+Trace 54 - SQLiteProfileProvider.cs:769:24-32:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:496:39-54                PROFILE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:495:4-391                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
+                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.LoweredUserName LIKE $UserName"
+                                                  + GetClauseForAuthenticationOptions (authenticationOption)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:508:32-40                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:508:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
+
+Trace 55 - SQLiteProfileProvider.cs:769:24-32:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:525:11-19                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:525:4-428                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
+                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.UserName LIKE $UserName AND u.LastActivityDate <= $LastActivityDate"
+                                                  + GetClauseForAuthenticationOptions (authenticationOption)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:541:32-40                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:541:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
+
+Trace 56 - SQLiteProfileProvider.cs:769:24-32:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:526:15-27                USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:525:4-428                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
+                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.UserName LIKE $UserName AND u.LastActivityDate <= $LastActivityDate"
+                                                  + GetClauseForAuthenticationOptions (authenticationOption)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:541:32-40                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:541:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
+
+Trace 57 - SQLiteProfileProvider.cs:769:24-32:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:526:39-54                PROFILE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:525:4-428                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
+                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.UserName LIKE $UserName AND u.LastActivityDate <= $LastActivityDate"
+                                                  + GetClauseForAuthenticationOptions (authenticationOption)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:541:32-40                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:541:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
+
+Trace 58 - SQLiteProfileProvider.cs:810:23-133:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:810:47-59                USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:810:23-133               "SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
+
+Trace 59 - SQLiteProfileProvider.cs:820:24-84:
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:820:41-56                PROFILE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:820:24-84                "DELETE FROM " + PROFILE_TB_NAME + " WHERE UserId = $UserId"
+
+Trace 60 - SQLiteRoleProvider.cs:182:24-375:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:182:41-63                   USERS_IN_ROLES_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:182:24-375                  "INSERT INTO " + USERS_IN_ROLES_TB_NAME
+                                                  + " (UserId, RoleId)"
+                                                  + " SELECT u.UserId, r.RoleId"
+                                                  + " FROM " + USER_TB_NAME + " u, " + ROLE_TB_NAME + " r"
+                                                  + " WHERE (u.LoweredUsername = $Username) AND (u.ApplicationId = $MembershipApplicationId)"
+                                                  + " AND (r.LoweredRoleName = $RoleName) AND (r.ApplicationId = $ApplicationId)"
+
+Trace 61 - SQLiteRoleProvider.cs:182:24-375:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:185:20-32                   USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:182:24-375                  "INSERT INTO " + USERS_IN_ROLES_TB_NAME
+                                                  + " (UserId, RoleId)"
+                                                  + " SELECT u.UserId, r.RoleId"
+                                                  + " FROM " + USER_TB_NAME + " u, " + ROLE_TB_NAME + " r"
+                                                  + " WHERE (u.LoweredUsername = $Username) AND (u.ApplicationId = $MembershipApplicationId)"
+                                                  + " AND (r.LoweredRoleName = $RoleName) AND (r.ApplicationId = $ApplicationId)"
+
+Trace 62 - SQLiteRoleProvider.cs:182:24-375:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:185:44-56                   ROLE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:182:24-375                  "INSERT INTO " + USERS_IN_ROLES_TB_NAME
+                                                  + " (UserId, RoleId)"
+                                                  + " SELECT u.UserId, r.RoleId"
+                                                  + " FROM " + USER_TB_NAME + " u, " + ROLE_TB_NAME + " r"
+                                                  + " WHERE (u.LoweredUsername = $Username) AND (u.ApplicationId = $MembershipApplicationId)"
+                                                  + " AND (r.LoweredRoleName = $RoleName) AND (r.ApplicationId = $ApplicationId)"
+
+Trace 63 - SQLiteRoleProvider.cs:244:24-189:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:244:41-53                   ROLE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:244:24-189                  "INSERT INTO " + ROLE_TB_NAME
+                                                  + " (RoleId, RoleName, LoweredRoleName, ApplicationId) "
+                                                  + " Values ($RoleId, $RoleName, $LoweredRoleName, $ApplicationId)"
+
+Trace 64 - SQLiteRoleProvider.cs:292:24-182:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:292:41-63                   USERS_IN_ROLES_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:292:24-182                  "DELETE FROM " + USERS_IN_ROLES_TB_NAME + " WHERE (RoleId IN"
+                                                  + " (SELECT RoleId FROM " + ROLE_TB_NAME + " WHERE LoweredRoleName = $RoleName))"
+
+Trace 65 - SQLiteRoleProvider.cs:292:24-182:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:293:44-56                   ROLE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:292:24-182                  "DELETE FROM " + USERS_IN_ROLES_TB_NAME + " WHERE (RoleId IN"
+                                                  + " (SELECT RoleId FROM " + ROLE_TB_NAME + " WHERE LoweredRoleName = $RoleName))"
+
+Trace 66 - SQLiteRoleProvider.cs:301:24-127:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:301:41-53                   ROLE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:301:24-127                  "DELETE FROM " + ROLE_TB_NAME + " WHERE LoweredRoleName = $RoleName AND ApplicationId = $ApplicationId"
+
+Trace 67 - SQLiteRoleProvider.cs:345:24-104:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:345:50-62                   ROLE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:345:24-104                  "SELECT RoleName FROM " + ROLE_TB_NAME + " WHERE ApplicationId = $ApplicationId"
+
+Trace 68 - SQLiteRoleProvider.cs:385:24-305:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:385:52-64                   ROLE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:385:24-305                  "SELECT r.RoleName FROM " + ROLE_TB_NAME + " r INNER JOIN " + USERS_IN_ROLES_TB_NAME
+                                                  + " uir ON r.RoleId = uir.RoleId INNER JOIN " + USER_TB_NAME + " u ON uir.UserId = u.UserId"
+                                                  + " WHERE (u.LoweredUsername = $Username) AND (u.ApplicationId = $MembershipApplicationId)"
+
+Trace 69 - SQLiteRoleProvider.cs:385:24-305:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:385:86-108                  USERS_IN_ROLES_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:385:24-305                  "SELECT r.RoleName FROM " + ROLE_TB_NAME + " r INNER JOIN " + USERS_IN_ROLES_TB_NAME
+                                                  + " uir ON r.RoleId = uir.RoleId INNER JOIN " + USER_TB_NAME + " u ON uir.UserId = u.UserId"
+                                                  + " WHERE (u.LoweredUsername = $Username) AND (u.ApplicationId = $MembershipApplicationId)"
+
+Trace 70 - SQLiteRoleProvider.cs:385:24-305:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:386:55-67                   USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:385:24-305                  "SELECT r.RoleName FROM " + ROLE_TB_NAME + " r INNER JOIN " + USERS_IN_ROLES_TB_NAME
+                                                  + " uir ON r.RoleId = uir.RoleId INNER JOIN " + USER_TB_NAME + " u ON uir.UserId = u.UserId"
+                                                  + " WHERE (u.LoweredUsername = $Username) AND (u.ApplicationId = $MembershipApplicationId)"
+
+Trace 71 - SQLiteRoleProvider.cs:427:24-295:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:427:52-64                   USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:427:24-295                  "SELECT u.Username FROM " + USER_TB_NAME + " u INNER JOIN " + USERS_IN_ROLES_TB_NAME
+                                                  + " uir ON u.UserId = uir.UserId INNER JOIN " + ROLE_TB_NAME + " r ON uir.RoleId = r.RoleId"
+                                                  + " WHERE (r.LoweredRoleName = $RoleName) AND (r.ApplicationId = $ApplicationId)"
+
+Trace 72 - SQLiteRoleProvider.cs:427:24-295:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:427:86-108                  USERS_IN_ROLES_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:427:24-295                  "SELECT u.Username FROM " + USER_TB_NAME + " u INNER JOIN " + USERS_IN_ROLES_TB_NAME
+                                                  + " uir ON u.UserId = uir.UserId INNER JOIN " + ROLE_TB_NAME + " r ON uir.RoleId = r.RoleId"
+                                                  + " WHERE (r.LoweredRoleName = $RoleName) AND (r.ApplicationId = $ApplicationId)"
+
+Trace 73 - SQLiteRoleProvider.cs:427:24-295:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:428:55-67                   ROLE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:427:24-295                  "SELECT u.Username FROM " + USER_TB_NAME + " u INNER JOIN " + USERS_IN_ROLES_TB_NAME
+                                                  + " uir ON u.UserId = uir.UserId INNER JOIN " + ROLE_TB_NAME + " r ON uir.RoleId = r.RoleId"
+                                                  + " WHERE (r.LoweredRoleName = $RoleName) AND (r.ApplicationId = $ApplicationId)"
+
+Trace 74 - SQLiteRoleProvider.cs:470:24-382:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:470:50-72                   USERS_IN_ROLES_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:470:24-382                  "SELECT COUNT(*) FROM " + USERS_IN_ROLES_TB_NAME + " uir INNER JOIN "
+                                                  + USER_TB_NAME + " u ON uir.UserId = u.UserId INNER JOIN " + ROLE_TB_NAME + " r ON uir.RoleId = r.RoleId "
+                                                  + " WHERE u.LoweredUsername = $Username AND u.ApplicationId = $MembershipApplicationId"
+                                                  + " AND r.LoweredRoleName = $RoleName AND r.ApplicationId = $ApplicationId"
+
+Trace 75 - SQLiteRoleProvider.cs:470:24-382:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:471:9-21                    USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:470:24-382                  "SELECT COUNT(*) FROM " + USERS_IN_ROLES_TB_NAME + " uir INNER JOIN "
+                                                  + USER_TB_NAME + " u ON uir.UserId = u.UserId INNER JOIN " + ROLE_TB_NAME + " r ON uir.RoleId = r.RoleId "
+                                                  + " WHERE u.LoweredUsername = $Username AND u.ApplicationId = $MembershipApplicationId"
+                                                  + " AND r.LoweredRoleName = $RoleName AND r.ApplicationId = $ApplicationId"
+
+Trace 76 - SQLiteRoleProvider.cs:470:24-382:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:471:68-80                   ROLE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:470:24-382                  "SELECT COUNT(*) FROM " + USERS_IN_ROLES_TB_NAME + " uir INNER JOIN "
+                                                  + USER_TB_NAME + " u ON uir.UserId = u.UserId INNER JOIN " + ROLE_TB_NAME + " r ON uir.RoleId = r.RoleId "
+                                                  + " WHERE u.LoweredUsername = $Username AND u.ApplicationId = $MembershipApplicationId"
+                                                  + " AND r.LoweredRoleName = $RoleName AND r.ApplicationId = $ApplicationId"
+
+Trace 77 - SQLiteRoleProvider.cs:522:24-345:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:522:41-63                   USERS_IN_ROLES_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:522:24-345                  "DELETE FROM " + USERS_IN_ROLES_TB_NAME
+                                                  + " WHERE UserId = (SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $MembershipApplicationId)"
+                                                  + " AND RoleId = (SELECT RoleId FROM " + ROLE_TB_NAME + " WHERE LoweredRoleName = $RoleName AND ApplicationId = $ApplicationId)"
+
+Trace 78 - SQLiteRoleProvider.cs:522:24-345:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:523:50-62                   USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:522:24-345                  "DELETE FROM " + USERS_IN_ROLES_TB_NAME
+                                                  + " WHERE UserId = (SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $MembershipApplicationId)"
+                                                  + " AND RoleId = (SELECT RoleId FROM " + ROLE_TB_NAME + " WHERE LoweredRoleName = $RoleName AND ApplicationId = $ApplicationId)"
+
+Trace 79 - SQLiteRoleProvider.cs:522:24-345:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:524:48-60                   ROLE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:522:24-345                  "DELETE FROM " + USERS_IN_ROLES_TB_NAME
+                                                  + " WHERE UserId = (SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $MembershipApplicationId)"
+                                                  + " AND RoleId = (SELECT RoleId FROM " + ROLE_TB_NAME + " WHERE LoweredRoleName = $RoleName AND ApplicationId = $ApplicationId)"
+
+Trace 80 - SQLiteRoleProvider.cs:573:24-144:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:573:50-62                   ROLE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:573:24-144                  "SELECT COUNT(*) FROM " + ROLE_TB_NAME +
+                                                  " WHERE LoweredRoleName = $RoleName AND ApplicationId = $ApplicationId"
+
+Trace 81 - SQLiteRoleProvider.cs:605:24-392:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:605:52-74                   USERS_IN_ROLES_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:605:24-392                  "SELECT u.Username FROM " + USERS_IN_ROLES_TB_NAME + " uir INNER JOIN " + USER_TB_NAME
+                                                  + " u ON uir.UserId = u.UserId INNER JOIN " + ROLE_TB_NAME + " r ON r.RoleId = uir.RoleId"
+                                                  + " WHERE u.LoweredUsername LIKE $UsernameSearch AND r.LoweredRoleName = $RoleName AND u.ApplicationId = $MembershipApplicationId"
+                                                  + " AND r.ApplicationId = $ApplicationId"
+
+Trace 82 - SQLiteRoleProvider.cs:605:24-392:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:605:98-110                  USER_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:605:24-392                  "SELECT u.Username FROM " + USERS_IN_ROLES_TB_NAME + " uir INNER JOIN " + USER_TB_NAME
+                                                  + " u ON uir.UserId = u.UserId INNER JOIN " + ROLE_TB_NAME + " r ON r.RoleId = uir.RoleId"
+                                                  + " WHERE u.LoweredUsername LIKE $UsernameSearch AND r.LoweredRoleName = $RoleName AND u.ApplicationId = $MembershipApplicationId"
+                                                  + " AND r.ApplicationId = $ApplicationId"
+
+Trace 83 - SQLiteRoleProvider.cs:605:24-392:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:606:53-65                   ROLE_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:605:24-392                  "SELECT u.Username FROM " + USERS_IN_ROLES_TB_NAME + " uir INNER JOIN " + USER_TB_NAME
+                                                  + " u ON uir.UserId = u.UserId INNER JOIN " + ROLE_TB_NAME + " r ON r.RoleId = uir.RoleId"
+                                                  + " WHERE u.LoweredUsername LIKE $UsernameSearch AND r.LoweredRoleName = $RoleName AND u.ApplicationId = $MembershipApplicationId"
+                                                  + " AND r.ApplicationId = $ApplicationId"
+
+Trace 84 - SQLiteRoleProvider.cs:669:25-160:
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:669:42-53                   APP_TB_NAME
+  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:669:25-160                  "INSERT INTO " + APP_TB_NAME + " (ApplicationId, ApplicationName, Description) VALUES ($ApplicationId, $ApplicationName, $Description)"
+
+Trace 85 - jquery.autocomplete.js:20:26-51:
+  WebGoat.NET/WebGoat/Resources/client-scripts/jquery.autocomplete.js:18:40-52                   currentValue
+  WebGoat.NET/WebGoat/Resources/client-scripts/jquery.autocomplete.js:19:25-63                   currentValue.replace(reEscape, '\\$1')
+  WebGoat.NET/WebGoat/Resources/client-scripts/jquery.autocomplete.js:19:5-70                    var pattern = '(' + currentValue.replace(reEscape, '\\$1') + ')';
+  WebGoat.NET/WebGoat/Resources/client-scripts/jquery.autocomplete.js:20:26-51                   new RegExp(pattern, 'gi')
