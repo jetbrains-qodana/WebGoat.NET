@@ -1,0 +1,102 @@
+# yamllint disable
+# Custom SQL Injection Rule for TextBox Sources
+# yamllint enable
+---
+rules:
+  - id: "webgoat_sql_injection"
+    mode: "taint"
+    languages:
+      - "csharp"
+    pattern-sources:
+      # Match TextBox.Text property access
+      - patterns:
+          - pattern: ($TEXTBOX).Text
+      - patterns:
+          - pattern: ($TEXTBOX).Text
+      # Match Request.Cookies["..."].Value
+      - pattern: Request.Cookies[$KEY].Value
+      - pattern: $EXPR.Request.Cookies[$KEY].Value
+      # Match Request["..."]
+      - pattern: Request[$KEY]
+      - pattern: $EXPR.Request[$KEY]
+    pattern-sanitizers:
+      # Match Encoder.Encode() sanitization calls
+      - pattern: $EXPR.Encode($IN)
+    pattern-sinks:
+      # Match function calls where parameter is named commandText
+      - patterns:
+          - pattern: $FUNC($ARG)
+          - pattern-inside: |
+              class $CLASS {
+                ...
+                $RET $FUNC($TYPE commandText) { ... }
+                ...
+              }
+      - patterns:
+          - pattern: $FUNC(..., $ARG, ...)
+          - pattern-inside: |
+              class $CLASS {
+                ...
+                $RET $FUNC(..., $TYPE commandText, ...) { ... }
+                ...
+              }
+      # Match function calls where parameter is named selectCommandText
+      - patterns:
+          - pattern: $FUNC($ARG)
+          - pattern-inside: |
+              class $CLASS {
+                ...
+                $RET $FUNC($TYPE selectCommandText) { ... }
+                ...
+              }
+      - patterns:
+          - pattern: $FUNC(..., $ARG, ...)
+          - pattern-inside: |
+              class $CLASS {
+                ...
+                $RET $FUNC(..., $TYPE selectCommandText, ...) { ... }
+                ...
+              }
+      # Match MySqlDataAdapter constructor calls
+      - pattern: new MySqlDataAdapter($ARG)
+      - pattern: new MySqlDataAdapter($ARG, ...)
+      - pattern: new MySqlDataAdapter(..., $ARG, ...)
+      - pattern: new SqlDataAdapter($ARG)
+      - pattern: new SqlDataAdapter($ARG, ...)
+      - pattern: new SqlDataAdapter(..., $ARG, ...)
+      - pattern: new SqliteDataAdapter($ARG)
+      - pattern: new SqliteDataAdapter($ARG, ...)
+      - pattern: new SqliteDataAdapter(..., $ARG, ...)
+      - pattern: new SqliteCommand($ARG)
+      - pattern: new SqliteCommand($ARG, ...)
+      - pattern: new SqliteCommand(..., $ARG, ...)
+      - pattern: new MySqlCommand($ARG)
+      - pattern: new MySqlCommand($ARG, ...)
+      - pattern: new MySqlCommand(..., $ARG, ...)
+    message: |
+      SQL Injection vulnerability detected: Data from TextBox control flows to a database
+      parameter without proper sanitization. User input from TextBox controls should never
+      be directly concatenated into SQL queries.
+      
+      Replace dynamically generated SQL queries with parameterized queries to prevent SQL injection.
+      
+      Example using parameterized queries:
+      ```
+      string userInput = txtUserName.Text;
+      string sql = "SELECT * FROM Users WHERE email = @Email";
+      SqlCommand cmd = new SqlCommand(sql, connection);
+      cmd.Parameters.AddWithValue("@Email", userInput);
+      cmd.ExecuteReader();
+      ```
+      
+      For more information on SQL Injection prevention see OWASP:
+      https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html
+    severity: "WARNING"
+    metadata:
+      shortDescription: "SQL Injection from TextBox user input"
+      category: "security"
+      owasp:
+        - "A1:2017-Injection"
+        - "A03:2021-Injection"
+      cwe: "CWE-89"
+      security-severity: "High"

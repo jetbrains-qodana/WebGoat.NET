@@ -1,0 +1,35 @@
+# yamllint disable
+# Custom Path Traversal Injection Rule
+# yamllint enable
+---
+rules:
+  - id: "webgoat_path_traversal_injection"
+    mode: "taint"
+    languages:
+      - "csharp"
+    pattern-sources:
+      # Match TextBox.Text property access
+      - pattern: ($TEXTBOX).Text
+      # Match Request.QueryString["..."]
+      - pattern: Request.QueryString[$KEY]
+      - pattern: $EXPR.Request.QueryString[$KEY]
+      # Match Request["..."]
+      - pattern: Request[$KEY]
+      - pattern: $EXPR.Request[$KEY]
+    pattern-sanitizers:
+      # Match Encoder.Encode() sanitization calls
+      - pattern: $EXPR.Encode($IN)
+    pattern-sinks:
+      - pattern: File.Exists($ARG)
+      - pattern: new FileStream($ARG, ...)
+      - pattern: new FileInfo($ARG)
+    message: |
+      A Path Traversal Injection vulnerability was detected. Path traversal allows attackers to access files and directories 
+      outside the intended directory by manipulating file paths (e.g., using '../' sequences). This can lead to unauthorized 
+      access to sensitive files, source code disclosure, or system configuration leaks. Always validate and sanitize file paths, 
+      use path canonicalization, and implement proper access controls to prevent this vulnerability.
+    severity: "WARNING"
+    metadata:
+      shortDescription: "Path Traversal Injection"
+      category: "security"
+      security-severity: "High"

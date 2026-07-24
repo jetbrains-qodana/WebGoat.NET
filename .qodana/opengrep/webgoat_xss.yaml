@@ -1,0 +1,67 @@
+# yamllint disable
+# Custom XSS (Cross-Site Scripting) Rule
+# yamllint enable
+---
+rules:
+  - id: "webgoat_xss"
+    mode: "taint"
+    languages:
+      - "csharp"
+    pattern-sources:
+      # Match Request["..."]
+      - pattern: Request[$KEY]
+      - pattern: $EXPR.Request[$KEY]
+      # Match Request.QueryString["..."]
+      - pattern: Request.QueryString[$KEY]
+      - pattern: $EXPR.Request.QueryString[$KEY]
+      # Match Request.Headers
+      - pattern: Request.Headers
+      - pattern: $EXPR.Request.Headers
+      # Match TextBox.Text property access
+      - pattern: ($TEXTBOX).Text
+    pattern-sanitizers:
+      - pattern: $A.Reverse($B)
+      - pattern: Server.MapPath($PATH)
+      - pattern: Server.UrlEncode($STR)
+      - pattern: CustomCryptoEncrypt($STR)
+      - pattern: System.Convert.ToBase64String($STR)
+    pattern-propagators:
+      - pattern: (StringBuilder $B).$ANY(...+(string $X)+...)
+        from: $X
+        to: $B
+      - pattern: $B = new StringBuilder($X)
+        from: $X
+        to: $B
+    pattern-sinks:
+      # Match TextBox.Text assignment: ($TEXTBOX).Text = $EXPR
+      - patterns:
+          - pattern: ($TEXTBOX).Text = $EXPR
+      - pattern: context.Response.Write($EXPR)
+    message: |
+      XSS (Cross-Site Scripting) vulnerability detected: Untrusted user input flows to an
+      output context without proper encoding or sanitization. User input from Request parameters,
+      query strings, or headers should never be directly written to Response or assigned to UI
+      controls without proper HTML encoding.
+
+      To prevent XSS attacks, always encode user input before output:
+
+      Example using HTML encoding:
+      ```
+      string userInput = Request.QueryString["name"];
+      string encoded = HttpUtility.HtmlEncode(userInput);
+      Response.Write(encoded);
+      // or
+      lblName.Text = encoded;
+      ```
+
+      For more information on XSS prevention see OWASP:
+      https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html
+    severity: "WARNING"
+    metadata:
+      shortDescription: "XSS vulnerability from untrusted user input"
+      category: "security"
+      owasp:
+        - "A3:2017-Cross-Site Scripting (XSS)"
+        - "A03:2021-Injection"
+      cwe: "CWE-79"
+      security-severity: "High"
