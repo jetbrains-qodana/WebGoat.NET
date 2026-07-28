@@ -6,7 +6,7 @@ Everything specific to this fork lives outside the application code:
 
 - [`qodana.yaml`](./qodana.yaml) - the Qodana run profile
 - [`.qodana/opengrep/`](./.qodana/opengrep) - custom OpenGrep rules
-- [`expected-traces/`](./expected-traces) - baselines the scan results are compared against
+- [`expected-traces/`](./expected-traces) - baselines the scan results are compared against, including one third-party baseline under [its own license](./expected-traces/sonar-ground-truth.LICENSE)
 
 ## Analyzing with Qodana
 
@@ -38,5 +38,7 @@ docker run --rm -it \
 ## Expected traces
 
 There is a baseline from the Sonar benchmark suite: [`sonar-ground-truth.json`](./expected-traces/sonar-ground-truth.json) taken from here: (https://github.com/SonarSource/sonar-benchmarks-scores/blob/master/csharp/security/WebGoat.Net/ground-truth.json). Please note that this benchmark contains only the sinks and not the full traces from the Taint Analysis / Data flow analysis.
+
+The file is licensed under LGPL-3.0, © SonarSource S.A. and contributors; the full license text is in [`sonar-ground-truth.LICENSE`](./expected-traces/sonar-ground-truth.LICENSE).
 
 There are also two files with the full expected traces from the Qodana team: [`expected-traces.txt`](./expected-traces/expected-traces.txt) produced by Qodana without additional custom rules and [`expected-traces-custom-rules.txt`](./expected-traces/expected-traces-custom-rules.txt) that requires the rules from the [`.qodana/opengrep`](./.qodana/opengrep) directory to reproduce.
