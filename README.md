@@ -39,6 +39,6 @@ docker run --rm -it \
 
 There is a baseline from the Sonar benchmark suite: [`sonar-ground-truth.json`](./expected-traces/sonar-ground-truth.json) taken from here: (https://github.com/SonarSource/sonar-benchmarks-scores/blob/master/csharp/security/WebGoat.Net/ground-truth.json). Please note that this benchmark contains only the sinks and not the full traces from the Taint Analysis / Data flow analysis.
 
-The file is licensed under LGPL-3.0, © SonarSource S.A. and contributors; the full license text is in [`sonar-ground-truth.LICENSE`](./expected-traces/sonar-ground-truth.LICENSE).
+The file is licensed under LGPL-3.0, © SonarSource S.A. and contributors; the full license text is in [`sonar-ground-truth.LICENSE`](./expected-traces/sonar-ground-truth.LICENSE) (LGPL v3 supplements the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.txt), which it incorporates by reference).
 
 There are also two files with the full expected traces from the Qodana team: [`expected-traces.txt`](./expected-traces/expected-traces.txt) produced by Qodana without additional custom rules and [`expected-traces-custom-rules.txt`](./expected-traces/expected-traces-custom-rules.txt) that requires the rules from the [`.qodana/opengrep`](./.qodana/opengrep) directory to reproduce.
