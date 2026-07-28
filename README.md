@@ -37,7 +37,7 @@ docker run --rm -it \
 
 ## Expected traces
 
-There is a baseline from the Sonar benchmark suite: [`sonar-ground-truth.json`](./expected-traces/sonar-ground-truth.json) taken from here: (https://github.com/SonarSource/sonar-benchmarks-scores/blob/master/csharp/security/WebGoat.Net/ground-truth.json). Please note that this benchmark contains only the sinks and not the full traces from the Taint Analysis / Data flow analysis.
+There is a baseline from the Sonar benchmark suite: [`sonar-ground-truth.json`](./expected-traces/sonar-ground-truth.json) taken from here: (https://github.com/SonarSource/sonar-benchmarks-scores/blob/master/csharp/security/WebGoat.Net/ground-truth.json), imported verbatim from upstream commit [`d114be8`](https://github.com/SonarSource/sonar-benchmarks-scores/commit/d114be8). Please note that this benchmark contains only the sinks and not the full traces from the Taint Analysis / Data flow analysis.
 
 The file is licensed under LGPL-3.0, © SonarSource S.A. and contributors; the full license text is in [`sonar-ground-truth.LICENSE`](./expected-traces/sonar-ground-truth.LICENSE) (LGPL v3 supplements the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.txt), which it incorporates by reference).
 
