@@ -19,7 +19,8 @@ docker run --rm -it \
     -v "$(pwd)":/data/project/ \
     -v "$(pwd)/.qodana/results":/data/results \
     -v "$(pwd)/.qodana/cache":/data/cache \
-    jetbrains/qodana-dotnet:latest
+    jetbrains/qodana-dotnet:latest \
+    --show-report
 ```
 
 Or disable default rules using the `--property=intellij.opengrep.rules.downloaded.source.enabled=false` flag to run only with the custom rules:
@@ -32,7 +33,8 @@ docker run --rm -it \
     -v "$(pwd)/.qodana/results":/data/results \
     -v "$(pwd)/.qodana/cache":/data/cache \
     jetbrains/qodana-dotnet:latest \
-    --property=intellij.opengrep.rules.downloaded.source.enabled=false
+    --property=intellij.opengrep.bundled.rules.enabled=false \
+    --show-report
 ```
 
 ## Expected traces
