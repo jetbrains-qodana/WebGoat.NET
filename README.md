@@ -19,7 +19,7 @@ docker run --rm -it \
     -v "$(pwd)":/data/project/ \
     -v "$(pwd)/.qodana/results":/data/results \
     -v "$(pwd)/.qodana/cache":/data/cache \
-    jetbrains/qodana-dotnet:latest \
+    jetbrains/qodana-dotnet:2026.2 \
     --show-report
 ```
 
@@ -32,7 +32,7 @@ docker run --rm -it \
     -v "$(pwd)":/data/project/ \
     -v "$(pwd)/.qodana/results":/data/results \
     -v "$(pwd)/.qodana/cache":/data/cache \
-    jetbrains/qodana-dotnet:latest \
+    jetbrains/qodana-dotnet:2026.2 \
     --property=intellij.opengrep.bundled.rules.enabled=false \
     --show-report
 ```
