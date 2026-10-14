@@ -10,6 +10,7 @@ profile:
       groups:
         - "ALL"
         - "!IncludedInspections"
+        - "AllPqcInspections"
   inspections:
     - group: IncludedInspections
       enabled: true
