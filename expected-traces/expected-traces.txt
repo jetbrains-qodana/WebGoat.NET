@@ -1,564 +1,1211 @@
-Trace 0 - SQLiteMembershipProvider.cs:1128:24-248:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1128:36-48            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1128:24-248           "UPDATE " + USER_TB_NAME +
-                                                  " SET Email = $Email, LoweredEmail = $LoweredEmail, Comment = $Comment," +
-                                                  " IsApproved = $IsApproved" +
-                                                  " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 1 - SQLiteMembershipProvider.cs:1174:25-196:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1174:37-49            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1174:25-196           "UPDATE " + USER_TB_NAME
-                                                  + " SET LastActivityDate = $UtcNow, LastLoginDate = $UtcNow"
-                                                  + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 2 - SQLiteMembershipProvider.cs:1211:24-152:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1211:50-62            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1211:24-152           "SELECT Count(*) FROM " + USER_TB_NAME +
-                                                  "WHERE LoweredUsername LIKE $UsernameSearch AND ApplicationId = $ApplicationId"
-
-Trace 3 - SQLiteMembershipProvider.cs:1228:24-373:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1231:20-32            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1228:24-373           "SELECT UserId, Username, Email, PasswordQuestion,"
-                                                  + " Comment, IsApproved, IsLockedOut, CreateDate, LastLoginDate,"
-                                                  + " LastActivityDate, LastPasswordChangedDate, LastLockoutDate "
-                                                  + " FROM " + USER_TB_NAME
-                                                  + " WHERE LoweredUsername LIKE $UsernameSearch AND ApplicationId = $ApplicationId "
-                                                  + " ORDER BY Username Asc"
-
-Trace 4 - SQLiteMembershipProvider.cs:1277:24-145:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1277:50-62            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1277:24-145           "SELECT Count(*) FROM " + USER_TB_NAME
-                                                  + " WHERE LoweredEmail LIKE $EmailSearch AND ApplicationId = $ApplicationId"
-
-Trace 5 - SQLiteMembershipProvider.cs:1294:24-365:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1297:20-32            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1294:24-365           "SELECT UserId, Username, Email, PasswordQuestion,"
-                                                  + " Comment, IsApproved, IsLockedOut, CreateDate, LastLoginDate,"
-                                                  + " LastActivityDate, LastPasswordChangedDate, LastLockoutDate"
-                                                  + " FROM " + USER_TB_NAME
-                                                  + " WHERE LoweredEmail LIKE $EmailSearch AND ApplicationId = $ApplicationId"
-                                                  + " ORDER BY Username Asc"
-
-Trace 6 - SQLiteMembershipProvider.cs:1358:24-159:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1358:41-52            APP_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1358:24-159           "INSERT INTO " + APP_TB_NAME + " (ApplicationId, ApplicationName, Description) VALUES ($ApplicationId, $ApplicationName, $Description)"
-
-Trace 7 - SQLiteMembershipProvider.cs:1472:24-308:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1474:21-33            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1472:24-308           "SELECT FailedPasswordAttemptCount, FailedPasswordAttemptWindowStart, "
-                                                  + "  FailedPasswordAnswerAttemptCount, FailedPasswordAnswerAttemptWindowStart, IsLockedOut "
-                                                  + "  FROM " + USER_TB_NAME
-                                                  + "  WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 8 - SQLiteMembershipProvider.cs:1507:26-348:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1507:38-50            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1507:26-348           "UPDATE " + USER_TB_NAME
-                                                  + " SET FailedPasswordAttemptCount = 0, FailedPasswordAttemptWindowStart = $MinDate, "
-                                                  + " FailedPasswordAnswerAttemptCount = 0, FailedPasswordAnswerAttemptWindowStart = $MinDate, IsLockedOut = '0' "
-                                                  + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 9 - SQLiteMembershipProvider.cs:1542:26-256:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1542:38-50            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1542:26-256           "UPDATE " + USER_TB_NAME
-                                                  + "  SET FailedPasswordAttemptCount = $Count, "
-                                                  + "      FailedPasswordAttemptWindowStart = $WindowStart "
-                                                  + "  WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 10 - SQLiteMembershipProvider.cs:1548:26-268:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1548:38-50            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1548:26-268           "UPDATE " + USER_TB_NAME
-                                                  + "  SET FailedPasswordAnswerAttemptCount = $Count, "
-                                                  + "      FailedPasswordAnswerAttemptWindowStart = $WindowStart "
-                                                  + "  WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 11 - SQLiteMembershipProvider.cs:1564:26-243:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1564:38-50            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1564:26-243           "UPDATE " + USER_TB_NAME
-                                                  + "  SET IsLockedOut = '1', LastLockoutDate = $LastLockoutDate, FailedPasswordAttemptCount = $Count "
-                                                  + "  WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 12 - SQLiteMembershipProvider.cs:1581:27-190:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1581:39-51            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1581:27-190           "UPDATE " + USER_TB_NAME
-                                                  + "  SET FailedPasswordAttemptCount = $Count"
-                                                  + "  WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 13 - SQLiteMembershipProvider.cs:1586:27-196:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1586:39-51            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1586:27-196           "UPDATE " + USER_TB_NAME
-                                                  + "  SET FailedPasswordAnswerAttemptCount = $Count"
-                                                  + "  WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 14 - SQLiteMembershipProvider.cs:1678:24-308:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1680:20-32            USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:1678:24-308           "SELECT Password, PasswordFormat, PasswordSalt, FailedPasswordAttemptCount,"
-                                                  + " FailedPasswordAnswerAttemptCount, IsApproved, IsLockedOut, LastLoginDate, LastActivityDate"
-                                                  + " FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 15 - SQLiteMembershipProvider.cs:350:24-233:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:350:36-48             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:350:24-233            "UPDATE " + USER_TB_NAME +
-                                                  " SET Password = $Password, LastPasswordChangedDate = $LastPasswordChangedDate " +
-                                                  " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 16 - SQLiteMembershipProvider.cs:407:24-214:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:407:36-48             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:407:24-214            "UPDATE " + USER_TB_NAME +
-                                                  " SET PasswordQuestion = $Question, PasswordAnswer = $Answer" +
-                                                  " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 17 - SQLiteMembershipProvider.cs:551:25-1066:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:551:42-54             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:551:25-1066           "INSERT INTO " + USER_TB_NAME +
-                                                  " (UserId, Username, LoweredUsername, ApplicationId, Email, LoweredEmail, Comment, Password, " +
-                                                  " PasswordFormat, PasswordSalt, PasswordQuestion, PasswordAnswer, IsApproved, IsAnonymous, " +
-                                                  " LastActivityDate, LastLoginDate, LastPasswordChangedDate, CreateDate, " +
-                                                  " IsLockedOut, LastLockoutDate, FailedPasswordAttemptCount, FailedPasswordAttemptWindowStart, " +
-                                                  " FailedPasswordAnswerAttemptCount, FailedPasswordAnswerAttemptWindowStart) " +
-                                                  " Values ($UserId, $Username, $LoweredUsername, $ApplicationId, $Email, $LoweredEmail, $Comment, $Password, " +
-                                                  " $PasswordFormat, $PasswordSalt, $PasswordQuestion, $PasswordAnswer, $IsApproved, $IsAnonymous, " +
-                                                  " $LastActivityDate, $LastLoginDate, $LastPasswordChangedDate, $CreateDate, " +
-                                                  " $IsLockedOut, $LastLockoutDate, $FailedPasswordAttemptCount, $FailedPasswordAttemptWindowStart, " +
-                                                  " $FailedPasswordAnswerAttemptCount, $FailedPasswordAnswerAttemptWindowStart)"
-
-Trace 18 - SQLiteMembershipProvider.cs:635:25-135:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:635:49-61             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:635:25-135            "SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 19 - SQLiteMembershipProvider.cs:643:24-127:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:643:41-53             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:643:24-127            "DELETE FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 20 - SQLiteMembershipProvider.cs:652:25-92:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:652:42-64             USERS_IN_ROLES_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:652:25-92             "DELETE FROM " + USERS_IN_ROLES_TB_NAME + " WHERE UserId = $UserId"
-
-Trace 21 - SQLiteMembershipProvider.cs:658:25-85:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:658:42-57             PROFILE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:658:25-85             "DELETE FROM " + PROFILE_TB_NAME + " WHERE UserId = $UserId"
-
-Trace 22 - SQLiteMembershipProvider.cs:686:24-124:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:686:50-62             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:686:24-124            "SELECT Count(*) FROM " + USER_TB_NAME + " WHERE ApplicationId = $ApplicationId AND IsAnonymous='0'"
-
-Trace 23 - SQLiteMembershipProvider.cs:700:24-372:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:703:22-34             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:700:24-372            "SELECT UserId, Username, Email, PasswordQuestion," +
-                                                  " Comment, IsApproved, IsLockedOut, CreateDate, LastLoginDate," +
-                                                  " LastActivityDate, LastPasswordChangedDate, LastLockoutDate " +
-                                                  " FROM " + USER_TB_NAME +
-                                                  " WHERE ApplicationId = $ApplicationId AND IsAnonymous='0' " +
-                                                  " ORDER BY Username Asc"
-
-Trace 24 - SQLiteMembershipProvider.cs:745:24-157:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:745:50-62             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:745:24-157            "SELECT Count(*) FROM " + USER_TB_NAME +
-                                                  " WHERE LastActivityDate > $LastActivityDate AND ApplicationId = $ApplicationId"
-
-Trace 25 - SQLiteMembershipProvider.cs:786:24-201:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:787:9-21              USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:786:24-201            "SELECT Password, PasswordFormat, PasswordSalt, PasswordAnswer, IsLockedOut FROM "
-                                                  + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 26 - SQLiteMembershipProvider.cs:845:24-323:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:848:20-32             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:845:24-323            "SELECT UserId, Username, Email, PasswordQuestion,"
-                                                  + " Comment, IsApproved, IsLockedOut, CreateDate, LastLoginDate,"
-                                                  + " LastActivityDate, LastPasswordChangedDate, LastLockoutDate"
-                                                  + " FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 27 - SQLiteMembershipProvider.cs:866:25-183:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:866:37-49             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:866:25-183            "UPDATE " + USER_TB_NAME
-                                                  + " SET LastActivityDate = $LastActivityDate"
-                                                  + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 28 - SQLiteMembershipProvider.cs:896:24-277:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:899:20-32             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:896:24-277            "SELECT UserId, Username, Email, PasswordQuestion,"
-                                                  + " Comment, IsApproved, IsLockedOut, CreateDate, LastLoginDate,"
-                                                  + " LastActivityDate, LastPasswordChangedDate, LastLockoutDate"
-                                                  + " FROM " + USER_TB_NAME + " WHERE UserId = $UserId"
-
-Trace 29 - SQLiteMembershipProvider.cs:916:25-137:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:916:37-49             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:916:25-137            "UPDATE " + USER_TB_NAME
-                                                  + " SET LastActivityDate = $LastActivityDate"
-                                                  + " WHERE UserId = $UserId"
-
-Trace 30 - SQLiteMembershipProvider.cs:942:24-349:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:942:36-48             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:942:24-349            "UPDATE " + USER_TB_NAME
-                                                  + " SET IsLockedOut = '0', FailedPasswordAttemptCount = 0,"
-                                                  + " FailedPasswordAttemptWindowStart = $MinDate, FailedPasswordAnswerAttemptCount = 0,"
-                                                  + " FailedPasswordAnswerAttemptWindowStart = $MinDate"
-                                                  + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 31 - SQLiteMembershipProvider.cs:978:24-141:
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:979:18-30             USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteMembershipProvider.cs:978:24-141            "SELECT Username" +
-                                                  " FROM " + USER_TB_NAME + " WHERE LoweredEmail = $Email AND ApplicationId = $ApplicationId"
-
-Trace 32 - SQLiteProfileProvider.cs:205:24-135:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:205:48-60                USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:205:24-135               "SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId;"
-
-Trace 33 - SQLiteProfileProvider.cs:222:24-93:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:222:50-65                PROFILE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:222:24-93                "SELECT COUNT(*) FROM " + PROFILE_TB_NAME + " WHERE UserId = $UserId"
-
-Trace 34 - SQLiteProfileProvider.cs:227:25-243:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:227:37-52                PROFILE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:227:25-243               "UPDATE " + PROFILE_TB_NAME + " SET PropertyNames = $PropertyNames, PropertyValuesString = $PropertyValuesString, PropertyValuesBinary = $PropertyValuesBinary, LastUpdatedDate = $LastUpdatedDate WHERE UserId = $UserId"
-
-Trace 35 - SQLiteProfileProvider.cs:229:25-244:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:229:42-57                PROFILE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:229:25-244               "INSERT INTO " + PROFILE_TB_NAME + " (UserId, PropertyNames, PropertyValuesString, PropertyValuesBinary, LastUpdatedDate) VALUES ($UserId, $PropertyNames, $PropertyValuesString, $PropertyValuesBinary, $LastUpdatedDate)"
-
-Trace 36 - SQLiteProfileProvider.cs:241:24-117:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:241:36-48                USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:241:24-117               "UPDATE " + USER_TB_NAME + " SET LastActivityDate = $LastActivityDate WHERE UserId = $UserId"
-
-Trace 37 - SQLiteProfileProvider.cs:381:24-290:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:381:41-56                PROFILE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:381:24-290               "DELETE FROM " + PROFILE_TB_NAME + " WHERE UserId IN (SELECT UserId FROM " + USER_TB_NAME
-                                                  + " WHERE ApplicationId = $ApplicationId AND LastActivityDate <= $LastActivityDate"
-                                                  + GetClauseForAuthenticationOptions (authenticationOption) + ")"
-
-Trace 38 - SQLiteProfileProvider.cs:381:24-290:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:381:101-113              USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:381:24-290               "DELETE FROM " + PROFILE_TB_NAME + " WHERE UserId IN (SELECT UserId FROM " + USER_TB_NAME
-                                                  + " WHERE ApplicationId = $ApplicationId AND LastActivityDate <= $LastActivityDate"
-                                                  + GetClauseForAuthenticationOptions (authenticationOption) + ")"
-
-Trace 39 - SQLiteProfileProvider.cs:412:24-281:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:412:50-62                USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:412:24-281               "SELECT COUNT(*) FROM " + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p " +
-                                                  "WHERE u.ApplicationId = $ApplicationId AND u.LastActivityDate <= $LastActivityDate AND u.UserId = p.UserId" + GetClauseForAuthenticationOptions (authenticationOption)
-
-Trace 40 - SQLiteProfileProvider.cs:412:24-281:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:412:74-89                PROFILE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:412:24-281               "SELECT COUNT(*) FROM " + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p " +
-                                                  "WHERE u.ApplicationId = $ApplicationId AND u.LastActivityDate <= $LastActivityDate AND u.UserId = p.UserId" + GetClauseForAuthenticationOptions (authenticationOption)
-
-Trace 41 - SQLiteProfileProvider.cs:551:23-1130:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:551:40-52                USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:551:23-1130              "INSERT INTO " + USER_TB_NAME
-                                                  + " (UserId, Username, LoweredUsername, ApplicationId, Email, LoweredEmail, Comment, Password,"
-                                                  + " PasswordFormat, PasswordSalt, PasswordQuestion,"
-                                                  + " PasswordAnswer, IsApproved, IsAnonymous,"
-                                                  + " CreateDate, LastPasswordChangedDate, LastActivityDate,"
-                                                  + " LastLoginDate, IsLockedOut, LastLockoutDate,"
-                                                  + " FailedPasswordAttemptCount, FailedPasswordAttemptWindowStart,"
-                                                  + " FailedPasswordAnswerAttemptCount, FailedPasswordAnswerAttemptWindowStart)"
-                                                  + " Values($UserId, $Username, $LoweredUsername, $ApplicationId, $Email, $LoweredEmail, $Comment, $Password,"
-                                                  + " $PasswordFormat, $PasswordSalt, $PasswordQuestion, $PasswordAnswer, $IsApproved, $IsAnonymous, $CreateDate, $LastPasswordChangedDate,"
-                                                  + " $LastActivityDate, $LastLoginDate, $IsLockedOut, $LastLockoutDate,"
-                                                  + " $FailedPasswordAttemptCount, $FailedPasswordAttemptWindowStart,"
-                                                  + " $FailedPasswordAnswerAttemptCount, $FailedPasswordAnswerAttemptWindowStart)"
-
-Trace 42 - SQLiteProfileProvider.cs:644:24-134:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:644:48-60                USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:644:24-134               "SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $UserName AND ApplicationId = $ApplicationId"
-
-Trace 43 - SQLiteProfileProvider.cs:655:25-143:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:655:100-115              PROFILE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:655:25-143               "SELECT PropertyNames, PropertyValuesString, PropertyValuesBinary FROM " + PROFILE_TB_NAME + " WHERE UserId = $UserId"
-
-Trace 44 - SQLiteProfileProvider.cs:670:25-118:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:670:37-49                USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:670:25-118               "UPDATE " + USER_TB_NAME + " SET LastActivityDate = $LastActivityDate WHERE UserId = $UserId"
-
-Trace 45 - SQLiteProfileProvider.cs:715:25-160:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:715:42-53                APP_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:715:25-160               "INSERT INTO " + APP_TB_NAME + " (ApplicationId, ApplicationName, Description) VALUES ($ApplicationId, $ApplicationName, $Description)"
-
-Trace 46 - SQLiteProfileProvider.cs:769:24-32:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:441:11-19                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:441:4-355                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
-                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId "
-                                                  + GetClauseForAuthenticationOptions (authenticationOption)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:450:32-40                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:450:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
-
-Trace 47 - SQLiteProfileProvider.cs:769:24-32:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:442:15-27                USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:441:4-355                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
-                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId "
-                                                  + GetClauseForAuthenticationOptions (authenticationOption)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:450:32-40                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:450:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
-
-Trace 48 - SQLiteProfileProvider.cs:769:24-32:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:442:39-54                PROFILE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:441:4-355                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
-                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId "
-                                                  + GetClauseForAuthenticationOptions (authenticationOption)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:450:32-40                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:450:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
-
-Trace 49 - SQLiteProfileProvider.cs:769:24-32:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:466:11-19                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:466:4-398                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
-                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.LastActivityDate <= $LastActivityDate"
-                                                  + GetClauseForAuthenticationOptions (authenticationOption)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:479:32-40                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:479:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
-
-Trace 50 - SQLiteProfileProvider.cs:769:24-32:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:467:15-27                USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:466:4-398                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
-                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.LastActivityDate <= $LastActivityDate"
-                                                  + GetClauseForAuthenticationOptions (authenticationOption)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:479:32-40                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:479:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
-
-Trace 51 - SQLiteProfileProvider.cs:769:24-32:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:467:39-54                PROFILE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:466:4-398                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
-                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.LastActivityDate <= $LastActivityDate"
-                                                  + GetClauseForAuthenticationOptions (authenticationOption)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:479:32-40                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:479:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
-
-Trace 52 - SQLiteProfileProvider.cs:769:24-32:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:495:11-19                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:495:4-391                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
-                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.LoweredUserName LIKE $UserName"
-                                                  + GetClauseForAuthenticationOptions (authenticationOption)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:508:32-40                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:508:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
-
-Trace 53 - SQLiteProfileProvider.cs:769:24-32:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:496:15-27                USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:495:4-391                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
-                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.LoweredUserName LIKE $UserName"
-                                                  + GetClauseForAuthenticationOptions (authenticationOption)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:508:32-40                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:508:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
-
-Trace 54 - SQLiteProfileProvider.cs:769:24-32:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:496:39-54                PROFILE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:495:4-391                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
-                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.LoweredUserName LIKE $UserName"
-                                                  + GetClauseForAuthenticationOptions (authenticationOption)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:508:32-40                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:508:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
-
-Trace 55 - SQLiteProfileProvider.cs:769:24-32:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:525:11-19                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:525:4-428                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
-                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.UserName LIKE $UserName AND u.LastActivityDate <= $LastActivityDate"
-                                                  + GetClauseForAuthenticationOptions (authenticationOption)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:541:32-40                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:541:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
-
-Trace 56 - SQLiteProfileProvider.cs:769:24-32:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:526:15-27                USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:525:4-428                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
-                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.UserName LIKE $UserName AND u.LastActivityDate <= $LastActivityDate"
-                                                  + GetClauseForAuthenticationOptions (authenticationOption)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:541:32-40                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:541:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
-
-Trace 57 - SQLiteProfileProvider.cs:769:24-32:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:526:39-54                PROFILE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:525:4-428                string sqlQuery = "SELECT u.UserName, u.IsAnonymous, u.LastActivityDate, p.LastUpdatedDate, length(p.PropertyNames) + length(p.PropertyValuesString) FROM "
-                                                  + USER_TB_NAME + " u, " + PROFILE_TB_NAME + " p WHERE u.ApplicationId = $ApplicationId AND u.UserId = p.UserId AND u.UserName LIKE $UserName AND u.LastActivityDate <= $LastActivityDate"
-                                                  + GetClauseForAuthenticationOptions (authenticationOption)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:541:32-40                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:541:11-86                GetProfilesForQuery (sqlQuery, args, pageIndex, pageSize, out totalRecords)
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:750:68-76                sqlQuery
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:769:24-32                sqlQuery
-
-Trace 58 - SQLiteProfileProvider.cs:810:23-133:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:810:47-59                USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:810:23-133               "SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $ApplicationId"
-
-Trace 59 - SQLiteProfileProvider.cs:820:24-84:
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:820:41-56                PROFILE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteProfileProvider.cs:820:24-84                "DELETE FROM " + PROFILE_TB_NAME + " WHERE UserId = $UserId"
-
-Trace 60 - SQLiteRoleProvider.cs:182:24-375:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:182:41-63                   USERS_IN_ROLES_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:182:24-375                  "INSERT INTO " + USERS_IN_ROLES_TB_NAME
-                                                  + " (UserId, RoleId)"
-                                                  + " SELECT u.UserId, r.RoleId"
-                                                  + " FROM " + USER_TB_NAME + " u, " + ROLE_TB_NAME + " r"
-                                                  + " WHERE (u.LoweredUsername = $Username) AND (u.ApplicationId = $MembershipApplicationId)"
-                                                  + " AND (r.LoweredRoleName = $RoleName) AND (r.ApplicationId = $ApplicationId)"
-
-Trace 61 - SQLiteRoleProvider.cs:182:24-375:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:185:20-32                   USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:182:24-375                  "INSERT INTO " + USERS_IN_ROLES_TB_NAME
-                                                  + " (UserId, RoleId)"
-                                                  + " SELECT u.UserId, r.RoleId"
-                                                  + " FROM " + USER_TB_NAME + " u, " + ROLE_TB_NAME + " r"
-                                                  + " WHERE (u.LoweredUsername = $Username) AND (u.ApplicationId = $MembershipApplicationId)"
-                                                  + " AND (r.LoweredRoleName = $RoleName) AND (r.ApplicationId = $ApplicationId)"
-
-Trace 62 - SQLiteRoleProvider.cs:182:24-375:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:185:44-56                   ROLE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:182:24-375                  "INSERT INTO " + USERS_IN_ROLES_TB_NAME
-                                                  + " (UserId, RoleId)"
-                                                  + " SELECT u.UserId, r.RoleId"
-                                                  + " FROM " + USER_TB_NAME + " u, " + ROLE_TB_NAME + " r"
-                                                  + " WHERE (u.LoweredUsername = $Username) AND (u.ApplicationId = $MembershipApplicationId)"
-                                                  + " AND (r.LoweredRoleName = $RoleName) AND (r.ApplicationId = $ApplicationId)"
-
-Trace 63 - SQLiteRoleProvider.cs:244:24-189:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:244:41-53                   ROLE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:244:24-189                  "INSERT INTO " + ROLE_TB_NAME
-                                                  + " (RoleId, RoleName, LoweredRoleName, ApplicationId) "
-                                                  + " Values ($RoleId, $RoleName, $LoweredRoleName, $ApplicationId)"
-
-Trace 64 - SQLiteRoleProvider.cs:292:24-182:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:292:41-63                   USERS_IN_ROLES_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:292:24-182                  "DELETE FROM " + USERS_IN_ROLES_TB_NAME + " WHERE (RoleId IN"
-                                                  + " (SELECT RoleId FROM " + ROLE_TB_NAME + " WHERE LoweredRoleName = $RoleName))"
-
-Trace 65 - SQLiteRoleProvider.cs:292:24-182:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:293:44-56                   ROLE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:292:24-182                  "DELETE FROM " + USERS_IN_ROLES_TB_NAME + " WHERE (RoleId IN"
-                                                  + " (SELECT RoleId FROM " + ROLE_TB_NAME + " WHERE LoweredRoleName = $RoleName))"
-
-Trace 66 - SQLiteRoleProvider.cs:301:24-127:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:301:41-53                   ROLE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:301:24-127                  "DELETE FROM " + ROLE_TB_NAME + " WHERE LoweredRoleName = $RoleName AND ApplicationId = $ApplicationId"
-
-Trace 67 - SQLiteRoleProvider.cs:345:24-104:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:345:50-62                   ROLE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:345:24-104                  "SELECT RoleName FROM " + ROLE_TB_NAME + " WHERE ApplicationId = $ApplicationId"
-
-Trace 68 - SQLiteRoleProvider.cs:385:24-305:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:385:52-64                   ROLE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:385:24-305                  "SELECT r.RoleName FROM " + ROLE_TB_NAME + " r INNER JOIN " + USERS_IN_ROLES_TB_NAME
-                                                  + " uir ON r.RoleId = uir.RoleId INNER JOIN " + USER_TB_NAME + " u ON uir.UserId = u.UserId"
-                                                  + " WHERE (u.LoweredUsername = $Username) AND (u.ApplicationId = $MembershipApplicationId)"
-
-Trace 69 - SQLiteRoleProvider.cs:385:24-305:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:385:86-108                  USERS_IN_ROLES_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:385:24-305                  "SELECT r.RoleName FROM " + ROLE_TB_NAME + " r INNER JOIN " + USERS_IN_ROLES_TB_NAME
-                                                  + " uir ON r.RoleId = uir.RoleId INNER JOIN " + USER_TB_NAME + " u ON uir.UserId = u.UserId"
-                                                  + " WHERE (u.LoweredUsername = $Username) AND (u.ApplicationId = $MembershipApplicationId)"
-
-Trace 70 - SQLiteRoleProvider.cs:385:24-305:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:386:55-67                   USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:385:24-305                  "SELECT r.RoleName FROM " + ROLE_TB_NAME + " r INNER JOIN " + USERS_IN_ROLES_TB_NAME
-                                                  + " uir ON r.RoleId = uir.RoleId INNER JOIN " + USER_TB_NAME + " u ON uir.UserId = u.UserId"
-                                                  + " WHERE (u.LoweredUsername = $Username) AND (u.ApplicationId = $MembershipApplicationId)"
-
-Trace 71 - SQLiteRoleProvider.cs:427:24-295:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:427:52-64                   USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:427:24-295                  "SELECT u.Username FROM " + USER_TB_NAME + " u INNER JOIN " + USERS_IN_ROLES_TB_NAME
-                                                  + " uir ON u.UserId = uir.UserId INNER JOIN " + ROLE_TB_NAME + " r ON uir.RoleId = r.RoleId"
-                                                  + " WHERE (r.LoweredRoleName = $RoleName) AND (r.ApplicationId = $ApplicationId)"
-
-Trace 72 - SQLiteRoleProvider.cs:427:24-295:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:427:86-108                  USERS_IN_ROLES_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:427:24-295                  "SELECT u.Username FROM " + USER_TB_NAME + " u INNER JOIN " + USERS_IN_ROLES_TB_NAME
-                                                  + " uir ON u.UserId = uir.UserId INNER JOIN " + ROLE_TB_NAME + " r ON uir.RoleId = r.RoleId"
-                                                  + " WHERE (r.LoweredRoleName = $RoleName) AND (r.ApplicationId = $ApplicationId)"
-
-Trace 73 - SQLiteRoleProvider.cs:427:24-295:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:428:55-67                   ROLE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:427:24-295                  "SELECT u.Username FROM " + USER_TB_NAME + " u INNER JOIN " + USERS_IN_ROLES_TB_NAME
-                                                  + " uir ON u.UserId = uir.UserId INNER JOIN " + ROLE_TB_NAME + " r ON uir.RoleId = r.RoleId"
-                                                  + " WHERE (r.LoweredRoleName = $RoleName) AND (r.ApplicationId = $ApplicationId)"
-
-Trace 74 - SQLiteRoleProvider.cs:470:24-382:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:470:50-72                   USERS_IN_ROLES_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:470:24-382                  "SELECT COUNT(*) FROM " + USERS_IN_ROLES_TB_NAME + " uir INNER JOIN "
-                                                  + USER_TB_NAME + " u ON uir.UserId = u.UserId INNER JOIN " + ROLE_TB_NAME + " r ON uir.RoleId = r.RoleId "
-                                                  + " WHERE u.LoweredUsername = $Username AND u.ApplicationId = $MembershipApplicationId"
-                                                  + " AND r.LoweredRoleName = $RoleName AND r.ApplicationId = $ApplicationId"
-
-Trace 75 - SQLiteRoleProvider.cs:470:24-382:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:471:9-21                    USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:470:24-382                  "SELECT COUNT(*) FROM " + USERS_IN_ROLES_TB_NAME + " uir INNER JOIN "
-                                                  + USER_TB_NAME + " u ON uir.UserId = u.UserId INNER JOIN " + ROLE_TB_NAME + " r ON uir.RoleId = r.RoleId "
-                                                  + " WHERE u.LoweredUsername = $Username AND u.ApplicationId = $MembershipApplicationId"
-                                                  + " AND r.LoweredRoleName = $RoleName AND r.ApplicationId = $ApplicationId"
-
-Trace 76 - SQLiteRoleProvider.cs:470:24-382:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:471:68-80                   ROLE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:470:24-382                  "SELECT COUNT(*) FROM " + USERS_IN_ROLES_TB_NAME + " uir INNER JOIN "
-                                                  + USER_TB_NAME + " u ON uir.UserId = u.UserId INNER JOIN " + ROLE_TB_NAME + " r ON uir.RoleId = r.RoleId "
-                                                  + " WHERE u.LoweredUsername = $Username AND u.ApplicationId = $MembershipApplicationId"
-                                                  + " AND r.LoweredRoleName = $RoleName AND r.ApplicationId = $ApplicationId"
-
-Trace 77 - SQLiteRoleProvider.cs:522:24-345:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:522:41-63                   USERS_IN_ROLES_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:522:24-345                  "DELETE FROM " + USERS_IN_ROLES_TB_NAME
-                                                  + " WHERE UserId = (SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $MembershipApplicationId)"
-                                                  + " AND RoleId = (SELECT RoleId FROM " + ROLE_TB_NAME + " WHERE LoweredRoleName = $RoleName AND ApplicationId = $ApplicationId)"
-
-Trace 78 - SQLiteRoleProvider.cs:522:24-345:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:523:50-62                   USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:522:24-345                  "DELETE FROM " + USERS_IN_ROLES_TB_NAME
-                                                  + " WHERE UserId = (SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $MembershipApplicationId)"
-                                                  + " AND RoleId = (SELECT RoleId FROM " + ROLE_TB_NAME + " WHERE LoweredRoleName = $RoleName AND ApplicationId = $ApplicationId)"
-
-Trace 79 - SQLiteRoleProvider.cs:522:24-345:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:524:48-60                   ROLE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:522:24-345                  "DELETE FROM " + USERS_IN_ROLES_TB_NAME
-                                                  + " WHERE UserId = (SELECT UserId FROM " + USER_TB_NAME + " WHERE LoweredUsername = $Username AND ApplicationId = $MembershipApplicationId)"
-                                                  + " AND RoleId = (SELECT RoleId FROM " + ROLE_TB_NAME + " WHERE LoweredRoleName = $RoleName AND ApplicationId = $ApplicationId)"
-
-Trace 80 - SQLiteRoleProvider.cs:573:24-144:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:573:50-62                   ROLE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:573:24-144                  "SELECT COUNT(*) FROM " + ROLE_TB_NAME +
-                                                  " WHERE LoweredRoleName = $RoleName AND ApplicationId = $ApplicationId"
-
-Trace 81 - SQLiteRoleProvider.cs:605:24-392:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:605:52-74                   USERS_IN_ROLES_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:605:24-392                  "SELECT u.Username FROM " + USERS_IN_ROLES_TB_NAME + " uir INNER JOIN " + USER_TB_NAME
-                                                  + " u ON uir.UserId = u.UserId INNER JOIN " + ROLE_TB_NAME + " r ON r.RoleId = uir.RoleId"
-                                                  + " WHERE u.LoweredUsername LIKE $UsernameSearch AND r.LoweredRoleName = $RoleName AND u.ApplicationId = $MembershipApplicationId"
-                                                  + " AND r.ApplicationId = $ApplicationId"
-
-Trace 82 - SQLiteRoleProvider.cs:605:24-392:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:605:98-110                  USER_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:605:24-392                  "SELECT u.Username FROM " + USERS_IN_ROLES_TB_NAME + " uir INNER JOIN " + USER_TB_NAME
-                                                  + " u ON uir.UserId = u.UserId INNER JOIN " + ROLE_TB_NAME + " r ON r.RoleId = uir.RoleId"
-                                                  + " WHERE u.LoweredUsername LIKE $UsernameSearch AND r.LoweredRoleName = $RoleName AND u.ApplicationId = $MembershipApplicationId"
-                                                  + " AND r.ApplicationId = $ApplicationId"
-
-Trace 83 - SQLiteRoleProvider.cs:605:24-392:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:606:53-65                   ROLE_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:605:24-392                  "SELECT u.Username FROM " + USERS_IN_ROLES_TB_NAME + " uir INNER JOIN " + USER_TB_NAME
-                                                  + " u ON uir.UserId = u.UserId INNER JOIN " + ROLE_TB_NAME + " r ON r.RoleId = uir.RoleId"
-                                                  + " WHERE u.LoweredUsername LIKE $UsernameSearch AND r.LoweredRoleName = $RoleName AND u.ApplicationId = $MembershipApplicationId"
-                                                  + " AND r.ApplicationId = $ApplicationId"
-
-Trace 84 - SQLiteRoleProvider.cs:669:25-160:
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:669:42-53                   APP_TB_NAME
-  WebGoat.NET/WebGoat/Code/SQLiteRoleProvider.cs:669:25-160                  "INSERT INTO " + APP_TB_NAME + " (ApplicationId, ApplicationName, Description) VALUES ($ApplicationId, $ApplicationName, $Description)"
-
-Trace 85 - jquery.autocomplete.js:20:26-51:
-  WebGoat.NET/WebGoat/Resources/client-scripts/jquery.autocomplete.js:18:40-52                   currentValue
-  WebGoat.NET/WebGoat/Resources/client-scripts/jquery.autocomplete.js:19:25-63                   currentValue.replace(reEscape, '\\$1')
-  WebGoat.NET/WebGoat/Resources/client-scripts/jquery.autocomplete.js:19:5-70                    var pattern = '(' + currentValue.replace(reEscape, '\\$1') + ')';
-  WebGoat.NET/WebGoat/Resources/client-scripts/jquery.autocomplete.js:20:26-51                   new RegExp(pattern, 'gi')
+Trace 0 - ConfigFile.cs:59:52-61 - csharp-zip-slip:
+  WebGoat/App_Code/Settings.cs:35:37-49                              Path.Combine
+  WebGoat/App_Code/Settings.cs:35:17-88                              string configPath = Path.Combine(PARENT_CONFIG_PATH, DefaultConfigName)
+  WebGoat/App_Code/Settings.cs:36:52-62                              configPath
+  WebGoat/App_Code/Settings.cs:36:37-63                              server.MapPath(configPath)
+  WebGoat/App_Code/Settings.cs:36:17-63                              DefaultConfigPath = server.MapPath(configPath)
+  WebGoat/App_Code/Settings.cs:44:44-61                              DefaultConfigPath
+  WebGoat/App_Code/Settings.cs:51:54-71                              defaultConfigPath
+  WebGoat/App_Code/Settings.cs:51:21-72                              ConfigFile file = new ConfigFile(defaultConfigPath)
+  WebGoat/App_Code/ConfigFile.cs:19:34-42                            fileName
+  WebGoat/App_Code/ConfigFile.cs:21:13-33                            _filePath = fileName
+  WebGoat/App_Code/Settings.cs:51:21-72                              ConfigFile file = new ConfigFile(defaultConfigPath)
+  WebGoat/App_Code/Settings.cs:55:21-32                              file.Save()
+  WebGoat/App_Code/ConfigFile.cs:59:52-61                            _filePath
+
+Trace 1 - ConfigFile.cs:59:52-61 - csharp-zip-slip:
+  WebGoat/App_Code/Settings.cs:36:37-63                              server.MapPath(configPath)
+  WebGoat/App_Code/Settings.cs:36:17-63                              DefaultConfigPath = server.MapPath(configPath)
+  WebGoat/App_Code/Settings.cs:44:44-61                              DefaultConfigPath
+  WebGoat/App_Code/Settings.cs:51:54-71                              defaultConfigPath
+  WebGoat/App_Code/Settings.cs:51:21-72                              ConfigFile file = new ConfigFile(defaultConfigPath)
+  WebGoat/App_Code/ConfigFile.cs:19:34-42                            fileName
+  WebGoat/App_Code/ConfigFile.cs:21:13-33                            _filePath = fileName
+  WebGoat/App_Code/Settings.cs:51:21-72                              ConfigFile file = new ConfigFile(defaultConfigPath)
+  WebGoat/App_Code/Settings.cs:55:21-32                              file.Save()
+  WebGoat/App_Code/ConfigFile.cs:59:52-61                            _filePath
+
+Trace 2 - CookieManager.cs:18:24-102 - csharp_cookies_rule-CookieWithoutHttpOnlyFlag:
+  WebGoat/App_Code/CookieManager.cs:18:13-102                        HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted_ticket)
+  WebGoat/App_Code/CookieManager.cs:18:24-102                        cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted_ticket)
+
+Trace 3 - CookieManager.cs:24:20-26 - csharp_cookies_rule-CookieWithoutHttpOnlyFlag:
+  WebGoat/App_Code/CookieManager.cs:18:13-102                        HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted_ticket)
+  WebGoat/App_Code/CookieManager.cs:24:20-26                         cookie
+
+Trace 4 - CustomerLogin.aspx.cs:59:24-102 - csharp_cookies_rule-CookieWithoutHttpOnlyFlag:
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:59:13-102                   HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted_ticket)
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:59:24-102                   cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted_ticket)
+
+Trace 5 - CustomerLogin.aspx.cs:65:13-41 - csharp_cookies_rule-CookieWithoutHttpOnlyFlag:
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:59:13-102                   HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted_ticket)
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:65:13-41                    Response.Cookies.Add(cookie)
+
+Trace 6 - Default.aspx.cs:28:28-97 - csharp_cookies_rule-CookieWithoutHttpOnlyFlag:
+  WebGoat/Default.aspx.cs:28:17-97                          HttpCookie cookie = new HttpCookie("Server", Encoder.Encode(Server.MachineName))
+  WebGoat/Default.aspx.cs:28:28-97                          cookie = new HttpCookie("Server", Encoder.Encode(Server.MachineName))
+
+Trace 7 - Default.aspx.cs:29:17-45 - csharp_cookies_rule-CookieWithoutHttpOnlyFlag:
+  WebGoat/Default.aspx.cs:28:17-97                          HttpCookie cookie = new HttpCookie("Server", Encoder.Encode(Server.MachineName))
+  WebGoat/Default.aspx.cs:29:17-45                          Response.Cookies.Add(cookie)
+
+Trace 8 - EncryptVSEncode.aspx.cs:67:23-26 - csharp-reflected-xss-asp:
+  WebGoat/Content/EncryptVSEncode.aspx.cs:38:29-43                  txtString.Text
+  WebGoat/Content/EncryptVSEncode.aspx.cs:38:13-43                  string secret = txtString.Text
+  WebGoat/Content/EncryptVSEncode.aspx.cs:44:69-75                  secret
+  WebGoat/Content/EncryptVSEncode.aspx.cs:44:49-76                  CustomCryptoEncrypt(secret)
+  WebGoat/Content/EncryptVSEncode.aspx.cs:118:51-52                 s
+  WebGoat/Content/EncryptVSEncode.aspx.cs:120:51-52                 s
+  WebGoat/Content/EncryptVSEncode.aspx.cs:120:28-53                 Encoding.UTF8.GetBytes(s)
+  WebGoat/Content/EncryptVSEncode.aspx.cs:135:44-49                 bytes
+  WebGoat/Content/EncryptVSEncode.aspx.cs:135:20-50                 Encoding.UTF8.GetString(bytes)
+  WebGoat/Content/EncryptVSEncode.aspx.cs:44:49-76                  CustomCryptoEncrypt(secret)
+  WebGoat/Content/EncryptVSEncode.aspx.cs:44:24-77                  MakeRow("Custom Crypto", CustomCryptoEncrypt(secret))
+  WebGoat/Content/EncryptVSEncode.aspx.cs:58:55-58                  val
+  WebGoat/Content/EncryptVSEncode.aspx.cs:67:23-26                  val
+
+Trace 9 - EncryptVSEncode.aspx.cs:67:23-26 - csharp-reflected-xss-asp:
+  WebGoat/Content/EncryptVSEncode.aspx.cs:38:29-43                  txtString.Text
+  WebGoat/Content/EncryptVSEncode.aspx.cs:38:13-43                  string secret = txtString.Text
+  WebGoat/Content/EncryptVSEncode.aspx.cs:45:65-71                  secret
+  WebGoat/Content/EncryptVSEncode.aspx.cs:45:48-72                  Server.UrlEncode(secret)
+  WebGoat/Content/EncryptVSEncode.aspx.cs:45:24-73                  MakeRow("URL Encoded:", Server.UrlEncode(secret))
+  WebGoat/Content/EncryptVSEncode.aspx.cs:58:55-58                  val
+  WebGoat/Content/EncryptVSEncode.aspx.cs:67:23-26                  val
+
+Trace 10 - ForgotPassword.aspx.cs:42:24-66 - csharp_cookies_rule-CookieWithoutHttpOnlyFlag:
+  WebGoat/Content/ForgotPassword.aspx.cs:42:13-66                   HttpCookie cookie = new HttpCookie("encr_sec_qu_ans")
+  WebGoat/Content/ForgotPassword.aspx.cs:42:24-66                   cookie = new HttpCookie("encr_sec_qu_ans")
+
+Trace 11 - ForgotPassword.aspx.cs:43:24-66 - csharp_cookies_rule-CookieWithoutHttpOnlyFlag:
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:43:13-66                   HttpCookie cookie = new HttpCookie("encr_sec_qu_ans")
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:43:24-66                   cookie = new HttpCookie("encr_sec_qu_ans")
+
+Trace 12 - ForgotPassword.aspx.cs:48:13-41 - csharp_cookies_rule-CookieWithoutHttpOnlyFlag:
+  WebGoat/Content/ForgotPassword.aspx.cs:42:13-66                   HttpCookie cookie = new HttpCookie("encr_sec_qu_ans")
+  WebGoat/Content/ForgotPassword.aspx.cs:48:13-41                   Response.Cookies.Add(cookie)
+
+Trace 13 - ForgotPassword.aspx.cs:49:13-41 - csharp_cookies_rule-CookieWithoutHttpOnlyFlag:
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:43:13-66                   HttpCookie cookie = new HttpCookie("encr_sec_qu_ans")
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:49:13-41                   Response.Cookies.Add(cookie)
+
+Trace 14 - ForgotPassword.aspx.cs:66:42-148 - csharp-reflected-xss-asp:
+  WebGoat/App_Code/Encoder.cs:152:28-62                              System.Convert.FromBase64String(s)
+  WebGoat/App_Code/Encoder.cs:152:13-62                              byte[] bytes = System.Convert.FromBase64String(s)
+  WebGoat/App_Code/Encoder.cs:153:13-71                              string output = System.Text.Encoding.UTF8.GetString(bytes)
+  WebGoat/App_Code/Encoder.cs:154:20-26                              output
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:366:21-79                      string decoded_password = Encoder.Decode(encoded_password)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:367:21-46                      result = decoded_password
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:374:20-26                      result
+  WebGoat/Content/ForgotPassword.aspx.cs:77:13-59                   string password = du.GetPasswordByEmail(email)
+  WebGoat/Content/ForgotPassword.aspx.cs:78:20-28                   password
+  WebGoat/Content/ForgotPassword.aspx.cs:66:122-148                 getPassword(txtEmail.Text)
+  WebGoat/Content/ForgotPassword.aspx.cs:66:42-148                  "Security Question Challenge Successfully Completed! <br/>Your password is: " + getPassword(txtEmail.Text)
+
+Trace 15 - ForgotPassword.aspx.cs:66:42-148 - csharp-reflected-xss-asp:
+  WebGoat/App_Code/Encoder.cs:152:28-62                              System.Convert.FromBase64String(s)
+  WebGoat/App_Code/Encoder.cs:152:13-62                              byte[] bytes = System.Convert.FromBase64String(s)
+  WebGoat/App_Code/Encoder.cs:153:13-71                              string output = System.Text.Encoding.UTF8.GetString(bytes)
+  WebGoat/App_Code/Encoder.cs:154:20-26                              output
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:364:21-79                     string decoded_password = Encoder.Decode(encoded_password)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:365:21-46                     result = decoded_password
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:372:20-26                     result
+  WebGoat/Content/ForgotPassword.aspx.cs:77:13-59                   string password = du.GetPasswordByEmail(email)
+  WebGoat/Content/ForgotPassword.aspx.cs:78:20-28                   password
+  WebGoat/Content/ForgotPassword.aspx.cs:66:122-148                 getPassword(txtEmail.Text)
+  WebGoat/Content/ForgotPassword.aspx.cs:66:42-148                  "Security Question Challenge Successfully Completed! <br/>Your password is: " + getPassword(txtEmail.Text)
+
+Trace 16 - ForgotPassword.aspx.cs:67:42-148 - csharp-reflected-xss-asp:
+  WebGoat/App_Code/Encoder.cs:152:28-62                              System.Convert.FromBase64String(s)
+  WebGoat/App_Code/Encoder.cs:152:13-62                              byte[] bytes = System.Convert.FromBase64String(s)
+  WebGoat/App_Code/Encoder.cs:153:13-71                              string output = System.Text.Encoding.UTF8.GetString(bytes)
+  WebGoat/App_Code/Encoder.cs:154:20-26                              output
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:364:21-79                     string decoded_password = Encoder.Decode(encoded_password)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:365:21-46                     result = decoded_password
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:372:20-26                     result
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:13-59                   string password = du.GetPasswordByEmail(email)
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:84:20-28                   password
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:122-148                 getPassword(txtEmail.Text)
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:42-148                  "Security Question Challenge Successfully Completed! <br/>Your password is: " + getPassword(txtEmail.Text)
+
+Trace 17 - ForgotPassword.aspx.cs:67:42-148 - csharp-reflected-xss-asp:
+  WebGoat/App_Code/Encoder.cs:152:28-62                              System.Convert.FromBase64String(s)
+  WebGoat/App_Code/Encoder.cs:152:13-62                              byte[] bytes = System.Convert.FromBase64String(s)
+  WebGoat/App_Code/Encoder.cs:153:13-71                              string output = System.Text.Encoding.UTF8.GetString(bytes)
+  WebGoat/App_Code/Encoder.cs:154:20-26                              output
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:366:21-79                      string decoded_password = Encoder.Decode(encoded_password)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:367:21-46                      result = decoded_password
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:374:20-26                      result
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:13-59                   string password = du.GetPasswordByEmail(email)
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:84:20-28                   password
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:122-148                 getPassword(txtEmail.Text)
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:42-148                  "Security Question Challenge Successfully Completed! <br/>Your password is: " + getPassword(txtEmail.Text)
+
+Trace 18 - HeaderInjection.aspx.cs:18:28-70 - csharp_cookies_rule-CookieWithoutHttpOnlyFlag:
+  WebGoat/Content/HeaderInjection.aspx.cs:18:17-70                  HttpCookie cookie = new HttpCookie("UserAddedCookie")
+  WebGoat/Content/HeaderInjection.aspx.cs:18:28-70                  cookie = new HttpCookie("UserAddedCookie")
+
+Trace 19 - HeaderInjection.aspx.cs:21:17-45 - csharp_cookies_rule-CookieWithoutHttpOnlyFlag:
+  WebGoat/Content/HeaderInjection.aspx.cs:18:17-70                  HttpCookie cookie = new HttpCookie("UserAddedCookie")
+  WebGoat/Content/HeaderInjection.aspx.cs:21:17-45                  Response.Cookies.Add(cookie)
+
+Trace 20 - HeaderInjection.aspx.cs:33:31-80 - csharp-reflected-xss-asp:
+  WebGoat/Content/HeaderInjection.aspx.cs:33:31-80                  Request.Headers.ToString().Replace("&", "<br />")
+
+Trace 21 - MySqlDbProvider.cs:123:60-63 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:33:28-44                    txtUserName.Text
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:33:13-44                    string email = txtUserName.Text
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:38:42-47                    email
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:38:18-53                    du.IsValidCustomerLogin(email, pwd)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:112:49-54                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:118:74-79                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:118:13-145                     string sql = "select * from CustomerLogin where email = '" + email +
+                                                  "' and password = '" + encoded_password + "';"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:123:60-63                      sql
+
+Trace 22 - MySqlDbProvider.cs:123:65-75 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:33:28-44                    txtUserName.Text
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:33:13-44                    string email = txtUserName.Text
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:38:42-47                    email
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:38:18-53                    du.IsValidCustomerLogin(email, pwd)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:112:49-54                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:118:74-79                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:118:13-145                     string sql = "select * from CustomerLogin where email = '" + email +
+                                                  "' and password = '" + encoded_password + "';"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:123:60-63                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:123:17-76                      MySqlDataAdapter da = new MySqlDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:123:65-75                      connection
+
+Trace 23 - MySqlDbProvider.cs:204:61-64 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:89:41-80                   Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:89:17-80                   string customerNumber = Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:91:52-66                   customerNumber
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:91:32-67                   du.GetCustomerEmail(customerNumber)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:195:47-61                      customerNumber
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:203:94-108                     customerNumber
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:203:21-108                     string sql = "select email from CustomerLogin where customerNumber = " + customerNumber
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:204:61-64                      sql
+
+Trace 24 - MySqlDbProvider.cs:204:66-76 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:89:41-80                   Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:89:17-80                   string customerNumber = Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:91:52-66                   customerNumber
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:91:32-67                   du.GetCustomerEmail(customerNumber)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:195:47-61                      customerNumber
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:203:94-108                     customerNumber
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:203:21-108                     string sql = "select email from CustomerLogin where customerNumber = " + customerNumber
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:204:61-64                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:204:21-77                      MySqlCommand command = new MySqlCommand(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:204:66-76                      connection
+
+Trace 25 - MySqlDbProvider.cs:228:64-67 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:27:41-80                         Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:27:17-80                         string customerNumber = Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:29:52-66                         customerNumber
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:29:30-67                         du.GetCustomerDetails(customerNumber)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:215:50-64                      customerNumber
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:220:145-159                    customerNumber
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:217:13-656                     string sql = "select Customers.customerNumber, Customers.customerName, Customers.logoFileName, Customers.contactLastName, Customers.contactFirstName, " +
+                                                  "Customers.phone, Customers.addressLine1, Customers.addressLine2, Customers.city, Customers.state, Customers.postalCode, Customers.country, " +
+                                                  "Customers.salesRepEmployeeNumber, Customers.creditLimit, CustomerLogin.email, CustomerLogin.password, CustomerLogin.question_id, CustomerLogin.answer " +
+                                                  "From Customers, CustomerLogin where Customers.customerNumber = CustomerLogin.customerNumber and Customers.customerNumber = " + customerNumber
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:228:64-67                      sql
+
+Trace 26 - MySqlDbProvider.cs:228:69-79 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:27:41-80                         Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:27:17-80                         string customerNumber = Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:29:52-66                         customerNumber
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:29:30-67                         du.GetCustomerDetails(customerNumber)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:215:50-64                      customerNumber
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:220:145-159                    customerNumber
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:217:13-656                     string sql = "select Customers.customerNumber, Customers.customerName, Customers.logoFileName, Customers.contactLastName, Customers.contactFirstName, " +
+                                                  "Customers.phone, Customers.addressLine1, Customers.addressLine2, Customers.city, Customers.state, Customers.postalCode, Customers.country, " +
+                                                  "Customers.salesRepEmployeeNumber, Customers.creditLimit, CustomerLogin.email, CustomerLogin.password, CustomerLogin.question_id, CustomerLogin.answer " +
+                                                  "From Customers, CustomerLogin where Customers.customerNumber = CustomerLogin.customerNumber and Customers.customerNumber = " + customerNumber
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:228:64-67                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:228:21-80                      MySqlDataAdapter da = new MySqlDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:228:69-79                      connection
+
+Trace 27 - MySqlDbProvider.cs:282:61-64 - csharp-sql-injection:
+  WebGoat/Content/StoredXSS.aspx.cs:30:66-79                        txtEmail.Text
+  WebGoat/Content/StoredXSS.aspx.cs:30:40-97                        du.AddComment("user_cmt", txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:271:61-66                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:112-117                    email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:13-143                     string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:61-64                      sql
+
+Trace 28 - MySqlDbProvider.cs:282:61-64 - csharp-sql-injection:
+  WebGoat/Content/StoredXSS.aspx.cs:30:81-96                        txtComment.Text
+  WebGoat/Content/StoredXSS.aspx.cs:30:40-97                        du.AddComment("user_cmt", txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:271:75-82                      comment
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:128-135                    comment
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:13-143                     string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:61-64                      sql
+
+Trace 29 - MySqlDbProvider.cs:282:61-64 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:82-95                   txtEmail.Text
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:40-113                  du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:271:61-66                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:112-117                    email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:13-143                     string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:61-64                      sql
+
+Trace 30 - MySqlDbProvider.cs:282:61-64 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:97-112                  txtComment.Text
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:40-113                  du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:271:75-82                      comment
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:128-135                    comment
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:13-143                     string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:61-64                      sql
+
+Trace 31 - MySqlDbProvider.cs:282:66-76 - csharp-sql-injection:
+  WebGoat/Content/StoredXSS.aspx.cs:30:66-79                        txtEmail.Text
+  WebGoat/Content/StoredXSS.aspx.cs:30:40-97                        du.AddComment("user_cmt", txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:271:61-66                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:112-117                    email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:13-143                     string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:61-64                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:21-77                      MySqlCommand command = new MySqlCommand(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:66-76                      connection
+
+Trace 32 - MySqlDbProvider.cs:282:66-76 - csharp-sql-injection:
+  WebGoat/Content/StoredXSS.aspx.cs:30:81-96                        txtComment.Text
+  WebGoat/Content/StoredXSS.aspx.cs:30:40-97                        du.AddComment("user_cmt", txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:271:75-82                      comment
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:128-135                    comment
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:13-143                     string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:61-64                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:21-77                      MySqlCommand command = new MySqlCommand(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:66-76                      connection
+
+Trace 33 - MySqlDbProvider.cs:282:66-76 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:82-95                   txtEmail.Text
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:40-113                  du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:271:61-66                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:112-117                    email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:13-143                     string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:61-64                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:21-77                      MySqlCommand command = new MySqlCommand(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:66-76                      connection
+
+Trace 34 - MySqlDbProvider.cs:282:66-76 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:97-112                  txtComment.Text
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:40-113                  du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:271:75-82                      comment
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:128-135                    comment
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:273:13-143                     string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:61-64                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:21-77                      MySqlCommand command = new MySqlCommand(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:282:66-76                      connection
+
+Trace 35 - MySqlDbProvider.cs:329:60-63 - csharp-sql-injection:
+  WebGoat/Content/ForgotPassword.aspx.cs:27:63-76                   txtEmail.Text
+  WebGoat/Content/ForgotPassword.aspx.cs:27:31-77                   du.GetSecurityQuestionAndAnswer(txtEmail.Text)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:319:61-66                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:322:69-74                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:321:13-276                     string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                                                  "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                                                  "SecurityQuestions.question_id;"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:329:60-63                      sql
+
+Trace 36 - MySqlDbProvider.cs:329:60-63 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:28:63-76                   txtEmail.Text
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:28:31-77                   du.GetSecurityQuestionAndAnswer(txtEmail.Text)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:319:61-66                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:322:69-74                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:321:13-276                     string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                                                  "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                                                  "SecurityQuestions.question_id;"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:329:60-63                      sql
+
+Trace 37 - MySqlDbProvider.cs:329:65-75 - csharp-sql-injection:
+  WebGoat/Content/ForgotPassword.aspx.cs:27:63-76                   txtEmail.Text
+  WebGoat/Content/ForgotPassword.aspx.cs:27:31-77                   du.GetSecurityQuestionAndAnswer(txtEmail.Text)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:319:61-66                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:322:69-74                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:321:13-276                     string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                                                  "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                                                  "SecurityQuestions.question_id;"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:329:60-63                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:329:17-76                      MySqlDataAdapter da = new MySqlDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:329:65-75                      connection
+
+Trace 38 - MySqlDbProvider.cs:329:65-75 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:28:63-76                   txtEmail.Text
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:28:31-77                   du.GetSecurityQuestionAndAnswer(txtEmail.Text)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:319:61-66                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:322:69-74                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:321:13-276                     string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                                                  "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                                                  "SecurityQuestions.question_id;"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:329:60-63                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:329:17-76                      MySqlDataAdapter da = new MySqlDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:329:65-75                      connection
+
+Trace 39 - MySqlDbProvider.cs:355:64-67 - csharp-sql-injection:
+  WebGoat/Content/ForgotPassword.aspx.cs:66:134-147                 txtEmail.Text
+  WebGoat/Content/ForgotPassword.aspx.cs:66:122-148                 getPassword(txtEmail.Text)
+  WebGoat/Content/ForgotPassword.aspx.cs:75:35-40                   email
+  WebGoat/Content/ForgotPassword.aspx.cs:77:53-58                   email
+  WebGoat/Content/ForgotPassword.aspx.cs:77:31-59                   du.GetPasswordByEmail(email)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:345:49-54                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:354:82-87                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:354:21-94                      string sql = "select * from CustomerLogin where email = '" + email + "';"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:355:64-67                      sql
+
+Trace 40 - MySqlDbProvider.cs:355:64-67 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:134-147                 txtEmail.Text
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:122-148                 getPassword(txtEmail.Text)
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:81:35-40                   email
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:53-58                   email
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:31-59                   du.GetPasswordByEmail(email)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:345:49-54                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:354:82-87                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:354:21-94                      string sql = "select * from CustomerLogin where email = '" + email + "';"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:355:64-67                      sql
+
+Trace 41 - MySqlDbProvider.cs:355:69-79 - csharp-sql-injection:
+  WebGoat/Content/ForgotPassword.aspx.cs:66:134-147                 txtEmail.Text
+  WebGoat/Content/ForgotPassword.aspx.cs:66:122-148                 getPassword(txtEmail.Text)
+  WebGoat/Content/ForgotPassword.aspx.cs:75:35-40                   email
+  WebGoat/Content/ForgotPassword.aspx.cs:77:53-58                   email
+  WebGoat/Content/ForgotPassword.aspx.cs:77:31-59                   du.GetPasswordByEmail(email)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:345:49-54                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:354:82-87                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:354:21-94                      string sql = "select * from CustomerLogin where email = '" + email + "';"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:355:64-67                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:355:21-80                      MySqlDataAdapter da = new MySqlDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:355:69-79                      connection
+
+Trace 42 - MySqlDbProvider.cs:355:69-79 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:134-147                 txtEmail.Text
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:122-148                 getPassword(txtEmail.Text)
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:81:35-40                   email
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:53-58                   email
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:31-59                   du.GetPasswordByEmail(email)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:345:49-54                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:354:82-87                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:354:21-94                      string sql = "select * from CustomerLogin where email = '" + email + "';"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:355:64-67                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:355:21-80                      MySqlDataAdapter da = new MySqlDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:355:69-79                      connection
+
+Trace 43 - MySqlDbProvider.cs:416:43-46 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:25-49                   Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:13-49                   string id = Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:47-49                   id
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:26-50                   du.GetProductDetails(id)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:406:49-60                      productCode
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:415:72-83                      productCode
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:415:17-89                      sql = "select * from Products where productCode = '" + productCode + "'"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:416:43-46                      sql
+
+Trace 44 - MySqlDbProvider.cs:416:48-58 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:25-49                   Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:13-49                   string id = Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:47-49                   id
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:26-50                   du.GetProductDetails(id)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:406:49-60                      productCode
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:415:72-83                      productCode
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:415:17-89                      sql = "select * from Products where productCode = '" + productCode + "'"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:416:43-46                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:416:17-59                      da = new MySqlDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:416:48-58                      connection
+
+Trace 45 - MySqlDbProvider.cs:420:43-46 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:25-49                   Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:13-49                   string id = Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:47-49                   id
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:26-50                   du.GetProductDetails(id)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:406:49-60                      productCode
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:415:72-83                      productCode
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:419:72-83                      productCode
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:419:17-89                      sql = "select * from Comments where productCode = '" + productCode + "'"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:420:43-46                      sql
+
+Trace 46 - MySqlDbProvider.cs:420:48-58 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:25-49                   Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:13-49                   string id = Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:47-49                   id
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:26-50                   du.GetProductDetails(id)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:406:49-60                      productCode
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:415:72-83                      productCode
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:419:72-83                      productCode
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:419:17-89                      sql = "select * from Comments where productCode = '" + productCode + "'"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:420:43-46                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:420:17-59                      da = new MySqlDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:420:48-58                      connection
+
+Trace 47 - MySqlDbProvider.cs:522:60-63 - csharp-sql-injection:
+  WebGoat/Content/SQLInjection.aspx.cs:25:27-39                     txtName.Text
+  WebGoat/Content/SQLInjection.aspx.cs:25:13-39                     string name = txtName.Text
+  WebGoat/Content/SQLInjection.aspx.cs:26:44-48                     name
+  WebGoat/Content/SQLInjection.aspx.cs:26:26-49                     du.GetEmailByName(name)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:515:46-50                      name
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:517:102-106                    name
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:517:135-139                    name
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:517:13-146                     string sql = "select firstName, lastName, email from Employees where firstName like '" + name + "%' or lastName like '" + name + "%'"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:522:60-63                      sql
+
+Trace 48 - MySqlDbProvider.cs:522:65-75 - csharp-sql-injection:
+  WebGoat/Content/SQLInjection.aspx.cs:25:27-39                     txtName.Text
+  WebGoat/Content/SQLInjection.aspx.cs:25:13-39                     string name = txtName.Text
+  WebGoat/Content/SQLInjection.aspx.cs:26:44-48                     name
+  WebGoat/Content/SQLInjection.aspx.cs:26:26-49                     du.GetEmailByName(name)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:515:46-50                      name
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:517:102-106                    name
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:517:135-139                    name
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:517:13-146                     string sql = "select firstName, lastName, email from Employees where firstName like '" + name + "%' or lastName like '" + name + "%'"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:522:60-63                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:522:17-76                      MySqlDataAdapter da = new MySqlDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:522:65-75                      connection
+
+Trace 49 - MySqlDbProvider.cs:564:60-63 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:28-52                     context.Request["query"]
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:13-52                     string query = context.Request["query"]
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:27:47-52                     query
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:27:26-53                     du.GetCustomerEmails(query)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:557:49-54                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:559:81-86                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:559:13-93                      string sql = "select email from CustomerLogin where email like '" + email + "%'"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:564:60-63                      sql
+
+Trace 50 - MySqlDbProvider.cs:564:65-75 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:28-52                     context.Request["query"]
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:13-52                     string query = context.Request["query"]
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:27:47-52                     query
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:27:26-53                     du.GetCustomerEmails(query)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:557:49-54                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:559:81-86                      email
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:559:13-93                      string sql = "select email from CustomerLogin where email like '" + email + "%'"
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:564:60-63                      sql
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:564:17-76                      MySqlDataAdapter da = new MySqlDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/MySqlDbProvider.cs:564:65-75                      connection
+
+Trace 51 - Orders.aspx.cs:114:29-48 - csharp-reflected-xss-asp:
+  WebGoat/WebGoatCoins/Orders.aspx.cs:114:29-48                          e.Row.Cells[0].Text
+
+Trace 52 - Orders.aspx.cs:83:54-126 - csharp-reflected-xss-asp:
+  WebGoat/WebGoatCoins/Orders.aspx.cs:62:38-60                           Request["orderNumber"]
+  WebGoat/WebGoatCoins/Orders.aspx.cs:62:17-60                           string orderNumber = Request["orderNumber"]
+  WebGoat/WebGoatCoins/Orders.aspx.cs:83:54-126                          "Error finding order number " + orderNumber + ". Details: " + ex.Message
+
+Trace 53 - Orders.aspx.cs:91:48-76 - csharp-tainted-path:
+  WebGoat/WebGoatCoins/Orders.aspx.cs:88:39-55                           Request["image"]
+  WebGoat/WebGoatCoins/Orders.aspx.cs:88:17-55                           string target_image = Request["image"]
+  WebGoat/WebGoatCoins/Orders.aspx.cs:91:63-75                           target_image
+  WebGoat/WebGoatCoins/Orders.aspx.cs:91:48-76                           Server.MapPath(target_image)
+
+Trace 54 - PathManipulation.aspx.cs:43:42-71 - csharp-reflected-xss-asp:
+  WebGoat/Content/PathManipulation.aspx.cs:33:29-60                 Request.QueryString["filename"]
+  WebGoat/Content/PathManipulation.aspx.cs:33:11-60                 string filename = Request.QueryString["filename"]
+  WebGoat/Content/PathManipulation.aspx.cs:43:42-71                 "File not found: " + filename
+
+Trace 55 - PathManipulation.aspx.cs:53:49-58 - csharp-tainted-path:
+  WebGoat/Content/PathManipulation.aspx.cs:33:29-60                 Request.QueryString["filename"]
+  WebGoat/Content/PathManipulation.aspx.cs:33:11-60                 string filename = Request.QueryString["filename"]
+  WebGoat/Content/PathManipulation.aspx.cs:38:75-100                "~/Downloads/" + filename
+  WebGoat/Content/PathManipulation.aspx.cs:38:67-101                MapPath("~/Downloads/" + filename)
+  WebGoat/Content/PathManipulation.aspx.cs:38:25-107                ResponseFile(Request, Response, filename, MapPath("~/Downloads/" + filename), 100)
+  WebGoat/Content/PathManipulation.aspx.cs:49:112-121               _fullPath
+  WebGoat/Content/PathManipulation.aspx.cs:53:49-58                 _fullPath
+
+Trace 56 - ReflectedXSS.aspx.cs:26:30-80 - csharp-reflected-xss-asp:
+  WebGoat/Content/ReflectedXSS.aspx.cs:20:26-41                     Request["city"]
+  WebGoat/Content/ReflectedXSS.aspx.cs:20:17-42                     LoadCity(Request["city"])
+  WebGoat/Content/ReflectedXSS.aspx.cs:23:25-29                     city
+  WebGoat/Content/ReflectedXSS.aspx.cs:25:39-43                     city
+  WebGoat/Content/ReflectedXSS.aspx.cs:26:64-68                     city
+  WebGoat/Content/ReflectedXSS.aspx.cs:26:30-80                     "Here are the details for our " + city + " Office"
+
+Trace 57 - SQLInjectionDiscovery.aspx.cs:30:34-106 - csharp-reflected-xss-asp:
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:27:31-41            txtID.Text
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:27:17-57            string name = txtID.Text.Substring(0, 3)
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:28:61-65            name
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:28:33-66            du.GetEmailByCustomerNumber(name)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:544:55-58                     num
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:554:94-97                     num
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:554:21-97                     string sql = "select email from CustomerLogin where customerNumber = " + num
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:555:59-62                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:555:21-75                     SqliteCommand cmd = new SqliteCommand(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:556:38-57                     cmd.ExecuteScalar()
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:556:21-57                     output = (string)cmd.ExecuteScalar()
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:566:20-26                     output
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:28:17-66            string output = du.GetEmailByCustomerNumber(name)
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:30:34-106           String.IsNullOrEmpty(output) ? "Customer Number does not exist" : output
+
+Trace 58 - SqliteDbProvider.cs:191:63-66 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:89:41-80                   Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:89:17-80                   string customerNumber = Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:91:52-66                   customerNumber
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:91:32-67                   du.GetCustomerEmail(customerNumber)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:180:47-61                     customerNumber
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:190:94-108                    customerNumber
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:190:21-108                    string sql = "select email from CustomerLogin where customerNumber = " + customerNumber
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:191:63-66                     sql
+
+Trace 59 - SqliteDbProvider.cs:191:68-78 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:89:41-80                   Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:89:17-80                   string customerNumber = Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:91:52-66                   customerNumber
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:91:32-67                   du.GetCustomerEmail(customerNumber)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:180:47-61                     customerNumber
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:190:94-108                    customerNumber
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:190:21-108                    string sql = "select email from CustomerLogin where customerNumber = " + customerNumber
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:191:63-66                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:191:21-79                     SqliteCommand command = new SqliteCommand(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:191:68-78                     connection
+
+Trace 60 - SqliteDbProvider.cs:217:66-69 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:27:41-80                         Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:27:17-80                         string customerNumber = Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:29:52-66                         customerNumber
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:29:30-67                         du.GetCustomerDetails(customerNumber)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:202:50-64                     customerNumber
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:207:145-159                   customerNumber
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:204:13-656                    string sql = "select Customers.customerNumber, Customers.customerName, Customers.logoFileName, Customers.contactLastName, Customers.contactFirstName, " +
+                                                  "Customers.phone, Customers.addressLine1, Customers.addressLine2, Customers.city, Customers.state, Customers.postalCode, Customers.country, " +
+                                                  "Customers.salesRepEmployeeNumber, Customers.creditLimit, CustomerLogin.email, CustomerLogin.password, CustomerLogin.question_id, CustomerLogin.answer " +
+                                                  "From Customers, CustomerLogin where Customers.customerNumber = CustomerLogin.customerNumber and Customers.customerNumber = " + customerNumber
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:217:66-69                     sql
+
+Trace 61 - SqliteDbProvider.cs:217:71-81 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:27:41-80                         Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:27:17-80                         string customerNumber = Request.Cookies["customerNumber"].Value
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:29:52-66                         customerNumber
+  WebGoat/WebGoatCoins/MainPage.aspx.cs:29:30-67                         du.GetCustomerDetails(customerNumber)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:202:50-64                     customerNumber
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:207:145-159                   customerNumber
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:204:13-656                    string sql = "select Customers.customerNumber, Customers.customerName, Customers.logoFileName, Customers.contactLastName, Customers.contactFirstName, " +
+                                                  "Customers.phone, Customers.addressLine1, Customers.addressLine2, Customers.city, Customers.state, Customers.postalCode, Customers.country, " +
+                                                  "Customers.salesRepEmployeeNumber, Customers.creditLimit, CustomerLogin.email, CustomerLogin.password, CustomerLogin.question_id, CustomerLogin.answer " +
+                                                  "From Customers, CustomerLogin where Customers.customerNumber = CustomerLogin.customerNumber and Customers.customerNumber = " + customerNumber
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:217:66-69                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:217:21-82                     SqliteDataAdapter da = new SqliteDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:217:71-81                     connection
+
+Trace 62 - SqliteDbProvider.cs:274:63-66 - csharp-sql-injection:
+  WebGoat/Content/StoredXSS.aspx.cs:30:66-79                        txtEmail.Text
+  WebGoat/Content/StoredXSS.aspx.cs:30:40-97                        du.AddComment("user_cmt", txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:263:61-66                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:112-117                   email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:13-143                    string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:63-66                     sql
+
+Trace 63 - SqliteDbProvider.cs:274:63-66 - csharp-sql-injection:
+  WebGoat/Content/StoredXSS.aspx.cs:30:81-96                        txtComment.Text
+  WebGoat/Content/StoredXSS.aspx.cs:30:40-97                        du.AddComment("user_cmt", txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:263:75-82                     comment
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:128-135                   comment
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:13-143                    string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:63-66                     sql
+
+Trace 64 - SqliteDbProvider.cs:274:63-66 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:82-95                   txtEmail.Text
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:40-113                  du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:263:61-66                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:112-117                   email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:13-143                    string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:63-66                     sql
+
+Trace 65 - SqliteDbProvider.cs:274:63-66 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:97-112                  txtComment.Text
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:40-113                  du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:263:75-82                     comment
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:128-135                   comment
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:13-143                    string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:63-66                     sql
+
+Trace 66 - SqliteDbProvider.cs:274:68-78 - csharp-sql-injection:
+  WebGoat/Content/StoredXSS.aspx.cs:30:66-79                        txtEmail.Text
+  WebGoat/Content/StoredXSS.aspx.cs:30:40-97                        du.AddComment("user_cmt", txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:263:61-66                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:112-117                   email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:13-143                    string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:63-66                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:21-79                     SqliteCommand command = new SqliteCommand(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:68-78                     connection
+
+Trace 67 - SqliteDbProvider.cs:274:68-78 - csharp-sql-injection:
+  WebGoat/Content/StoredXSS.aspx.cs:30:81-96                        txtComment.Text
+  WebGoat/Content/StoredXSS.aspx.cs:30:40-97                        du.AddComment("user_cmt", txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:263:75-82                     comment
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:128-135                   comment
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:13-143                    string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:63-66                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:21-79                     SqliteCommand command = new SqliteCommand(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:68-78                     connection
+
+Trace 68 - SqliteDbProvider.cs:274:68-78 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:82-95                   txtEmail.Text
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:40-113                  du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:263:61-66                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:112-117                   email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:13-143                    string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:63-66                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:21-79                     SqliteCommand command = new SqliteCommand(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:68-78                     connection
+
+Trace 69 - SqliteDbProvider.cs:274:68-78 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:97-112                  txtComment.Text
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:41:40-113                  du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:263:75-82                     comment
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:128-135                   comment
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:265:13-143                    string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:63-66                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:21-79                     SqliteCommand command = new SqliteCommand(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:274:68-78                     connection
+
+Trace 70 - SqliteDbProvider.cs:325:62-65 - csharp-sql-injection:
+  WebGoat/Content/ForgotPassword.aspx.cs:27:63-76                   txtEmail.Text
+  WebGoat/Content/ForgotPassword.aspx.cs:27:31-77                   du.GetSecurityQuestionAndAnswer(txtEmail.Text)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:313:61-66                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:316:69-74                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:315:13-276                    string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                                                  "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                                                  "SecurityQuestions.question_id;"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:325:62-65                     sql
+
+Trace 71 - SqliteDbProvider.cs:325:62-65 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:28:63-76                   txtEmail.Text
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:28:31-77                   du.GetSecurityQuestionAndAnswer(txtEmail.Text)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:313:61-66                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:316:69-74                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:315:13-276                    string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                                                  "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                                                  "SecurityQuestions.question_id;"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:325:62-65                     sql
+
+Trace 72 - SqliteDbProvider.cs:325:67-77 - csharp-sql-injection:
+  WebGoat/Content/ForgotPassword.aspx.cs:27:63-76                   txtEmail.Text
+  WebGoat/Content/ForgotPassword.aspx.cs:27:31-77                   du.GetSecurityQuestionAndAnswer(txtEmail.Text)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:313:61-66                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:316:69-74                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:315:13-276                    string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                                                  "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                                                  "SecurityQuestions.question_id;"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:325:62-65                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:325:17-78                     SqliteDataAdapter da = new SqliteDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:325:67-77                     connection
+
+Trace 73 - SqliteDbProvider.cs:325:67-77 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:28:63-76                   txtEmail.Text
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:28:31-77                   du.GetSecurityQuestionAndAnswer(txtEmail.Text)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:313:61-66                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:316:69-74                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:315:13-276                    string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " +
+                                                  "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                                                  "SecurityQuestions.question_id;"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:325:62-65                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:325:17-78                     SqliteDataAdapter da = new SqliteDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:325:67-77                     connection
+
+Trace 74 - SqliteDbProvider.cs:353:66-69 - csharp-sql-injection:
+  WebGoat/Content/ForgotPassword.aspx.cs:66:134-147                 txtEmail.Text
+  WebGoat/Content/ForgotPassword.aspx.cs:66:122-148                 getPassword(txtEmail.Text)
+  WebGoat/Content/ForgotPassword.aspx.cs:75:35-40                   email
+  WebGoat/Content/ForgotPassword.aspx.cs:77:53-58                   email
+  WebGoat/Content/ForgotPassword.aspx.cs:77:31-59                   du.GetPasswordByEmail(email)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:341:49-54                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:352:82-87                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:352:21-94                     string sql = "select * from CustomerLogin where email = '" + email + "';"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:353:66-69                     sql
+
+Trace 75 - SqliteDbProvider.cs:353:66-69 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:134-147                 txtEmail.Text
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:122-148                 getPassword(txtEmail.Text)
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:81:35-40                   email
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:53-58                   email
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:31-59                   du.GetPasswordByEmail(email)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:341:49-54                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:352:82-87                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:352:21-94                     string sql = "select * from CustomerLogin where email = '" + email + "';"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:353:66-69                     sql
+
+Trace 76 - SqliteDbProvider.cs:353:71-81 - csharp-sql-injection:
+  WebGoat/Content/ForgotPassword.aspx.cs:66:134-147                 txtEmail.Text
+  WebGoat/Content/ForgotPassword.aspx.cs:66:122-148                 getPassword(txtEmail.Text)
+  WebGoat/Content/ForgotPassword.aspx.cs:75:35-40                   email
+  WebGoat/Content/ForgotPassword.aspx.cs:77:53-58                   email
+  WebGoat/Content/ForgotPassword.aspx.cs:77:31-59                   du.GetPasswordByEmail(email)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:341:49-54                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:352:82-87                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:352:21-94                     string sql = "select * from CustomerLogin where email = '" + email + "';"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:353:66-69                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:353:21-82                     SqliteDataAdapter da = new SqliteDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:353:71-81                     connection
+
+Trace 77 - SqliteDbProvider.cs:353:71-81 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:134-147                 txtEmail.Text
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:67:122-148                 getPassword(txtEmail.Text)
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:81:35-40                   email
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:53-58                   email
+  WebGoat/WebGoatCoins/ForgotPassword.aspx.cs:83:31-59                   du.GetPasswordByEmail(email)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:341:49-54                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:352:82-87                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:352:21-94                     string sql = "select * from CustomerLogin where email = '" + email + "';"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:353:66-69                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:353:21-82                     SqliteDataAdapter da = new SqliteDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:353:71-81                     connection
+
+Trace 78 - SqliteDbProvider.cs:420:44-47 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:25-49                   Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:13-49                   string id = Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:47-49                   id
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:26-50                   du.GetProductDetails(id)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:408:49-60                     productCode
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:419:72-83                     productCode
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:419:17-89                     sql = "select * from Products where productCode = '" + productCode + "'"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:420:44-47                     sql
+
+Trace 79 - SqliteDbProvider.cs:420:49-59 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:25-49                   Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:13-49                   string id = Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:47-49                   id
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:26-50                   du.GetProductDetails(id)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:408:49-60                     productCode
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:419:72-83                     productCode
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:419:17-89                     sql = "select * from Products where productCode = '" + productCode + "'"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:420:44-47                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:420:17-60                     da = new SqliteDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:420:49-59                     connection
+
+Trace 80 - SqliteDbProvider.cs:424:44-47 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:25-49                   Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:13-49                   string id = Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:47-49                   id
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:26-50                   du.GetProductDetails(id)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:408:49-60                     productCode
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:419:72-83                     productCode
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:423:72-83                     productCode
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:423:17-89                     sql = "select * from Comments where productCode = '" + productCode + "'"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:424:44-47                     sql
+
+Trace 81 - SqliteDbProvider.cs:424:49-59 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:25-49                   Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:55:13-49                   string id = Request["productNumber"]
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:47-49                   id
+  WebGoat/WebGoatCoins/ProductDetails.aspx.cs:57:26-50                   du.GetProductDetails(id)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:408:49-60                     productCode
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:419:72-83                     productCode
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:423:72-83                     productCode
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:423:17-89                     sql = "select * from Comments where productCode = '" + productCode + "'"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:424:44-47                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:424:17-60                     da = new SqliteDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:424:49-59                     connection
+
+Trace 82 - SqliteDbProvider.cs:533:62-65 - csharp-sql-injection:
+  WebGoat/Content/SQLInjection.aspx.cs:25:27-39                     txtName.Text
+  WebGoat/Content/SQLInjection.aspx.cs:25:13-39                     string name = txtName.Text
+  WebGoat/Content/SQLInjection.aspx.cs:26:44-48                     name
+  WebGoat/Content/SQLInjection.aspx.cs:26:26-49                     du.GetEmailByName(name)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:524:46-50                     name
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:526:102-106                   name
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:526:135-139                   name
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:526:13-146                    string sql = "select firstName, lastName, email from Employees where firstName like '" + name + "%' or lastName like '" + name + "%'"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:533:62-65                     sql
+
+Trace 83 - SqliteDbProvider.cs:533:67-77 - csharp-sql-injection:
+  WebGoat/Content/SQLInjection.aspx.cs:25:27-39                     txtName.Text
+  WebGoat/Content/SQLInjection.aspx.cs:25:13-39                     string name = txtName.Text
+  WebGoat/Content/SQLInjection.aspx.cs:26:44-48                     name
+  WebGoat/Content/SQLInjection.aspx.cs:26:26-49                     du.GetEmailByName(name)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:524:46-50                     name
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:526:102-106                   name
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:526:135-139                   name
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:526:13-146                    string sql = "select firstName, lastName, email from Employees where firstName like '" + name + "%' or lastName like '" + name + "%'"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:533:62-65                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:533:17-78                     SqliteDataAdapter da = new SqliteDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:533:67-77                     connection
+
+Trace 84 - SqliteDbProvider.cs:555:59-62 - csharp-sql-injection:
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:27:31-41            txtID.Text
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:27:17-57            string name = txtID.Text.Substring(0, 3)
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:28:61-65            name
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:28:33-66            du.GetEmailByCustomerNumber(name)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:544:55-58                     num
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:554:94-97                     num
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:554:21-97                     string sql = "select email from CustomerLogin where customerNumber = " + num
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:555:59-62                     sql
+
+Trace 85 - SqliteDbProvider.cs:555:64-74 - csharp-sql-injection:
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:27:31-41            txtID.Text
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:27:17-57            string name = txtID.Text.Substring(0, 3)
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:28:61-65            name
+  WebGoat/Content/SQLInjectionDiscovery.aspx.cs:28:33-66            du.GetEmailByCustomerNumber(name)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:544:55-58                     num
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:554:94-97                     num
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:554:21-97                     string sql = "select email from CustomerLogin where customerNumber = " + num
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:555:59-62                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:555:21-75                     SqliteCommand cmd = new SqliteCommand(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:555:64-74                     connection
+
+Trace 86 - SqliteDbProvider.cs:578:62-65 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:28-52                     context.Request["query"]
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:13-52                     string query = context.Request["query"]
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:27:47-52                     query
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:27:26-53                     du.GetCustomerEmails(query)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:569:49-54                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:571:81-86                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:571:13-93                     string sql = "select email from CustomerLogin where email like '" + email + "%'"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:578:62-65                     sql
+
+Trace 87 - SqliteDbProvider.cs:578:67-77 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:28-52                     context.Request["query"]
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:25:13-52                     string query = context.Request["query"]
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:27:47-52                     query
+  WebGoat/WebGoatCoins/Autocomplete.ashx.cs:27:26-53                     du.GetCustomerEmails(query)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:569:49-54                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:571:81-86                     email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:571:13-93                     string sql = "select email from CustomerLogin where email like '" + email + "%'"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:578:62-65                     sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:578:17-78                     SqliteDataAdapter da = new SqliteDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:578:67-77                     connection
+
+Trace 88 - SqliteDbProvider.cs:86:62-65 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:33:28-44                    txtUserName.Text
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:33:13-44                    string email = txtUserName.Text
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:38:42-47                    email
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:38:18-53                    du.IsValidCustomerLogin(email, pwd)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:73:49-54                      email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:79:74-79                      email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:79:13-154                     string sql = "select * from CustomerLogin where email = '" + email + "' and password = '" +
+                                                  encoded_password + "';"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:86:62-65                      sql
+
+Trace 89 - SqliteDbProvider.cs:86:67-77 - csharp-sql-injection:
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:33:28-44                    txtUserName.Text
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:33:13-44                    string email = txtUserName.Text
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:38:42-47                    email
+  WebGoat/WebGoatCoins/CustomerLogin.aspx.cs:38:18-53                    du.IsValidCustomerLogin(email, pwd)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:73:49-54                      email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:79:74-79                      email
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:79:13-154                     string sql = "select * from CustomerLogin where email = '" + email + "' and password = '" +
+                                                  encoded_password + "';"
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:86:62-65                      sql
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:86:17-78                      SqliteDataAdapter da = new SqliteDataAdapter(sql, connection)
+  WebGoat/App_Code/DB/SqliteDbProvider.cs:86:67-77                      connection
+
+Trace 90 - XMLInjection.aspx.cs:52:13-73 - csharp_injection_rule-XmlDocumentXXEInjection:
+  WebGoat/Content/XMLInjection.aspx.cs:51:13-48                     XmlDocument doc = new XmlDocument()
+  WebGoat/Content/XMLInjection.aspx.cs:52:13-73                     doc.Load(Server.MapPath("/App_Data/XmlInjectionUsers.xml"));
+
+Trace 91 - XPathInjection.aspx.cs:27:13-31 - csharp_injection_rule-XmlDocumentXXEInjection:
+  WebGoat/Content/XPathInjection.aspx.cs:26:13-49                   XmlDocument xDoc = new XmlDocument()
+  WebGoat/Content/XPathInjection.aspx.cs:27:13-31                   xDoc.LoadXml(xml);
+
+Trace 92 - jquery-1.3.2.min.js:12:10959-10970 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:12:10408-10444                S.replace(/^\s+/,"").substring(0,10)
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:12:10402-10458                var O=S.replace(/^\s+/,"").substring(0,10).toLowerCase()
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:12:10585-10626                O.match(/^<(thead|tbody|tfoot|colg|cap)/)
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:12:10459-10946                var Q=!O.indexOf("<opt")&&[1,"<select multiple='multiple'>","</select>"]||!O.indexOf("<leg")&&[1,"<fieldset>","</fieldset>"]||O.match(/^<(thead|tbody|tfoot|colg|cap)/)&&[1,"<table>","</table>"]||!O.indexOf("<tr")&&[2,"<table><tbody>","</tbody></table>"]||(!O.indexOf("<td")||!O.indexOf("<th"))&&[3,"<table><tbody><tr>","</tr></tbody></table>"]||!O.indexOf("<col")&&[2,"<table><tbody></tbody><colgroup>","</colgroup></table>"]||!o.support.htmlSerialize&&[1,"div<div>","</div>"]||[0,"",""]
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:12:10959-10970                Q[1]+S+Q[2]
+
+Trace 93 - jquery-1.3.2.min.js:19:23760-23859 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23781-23795                M.responseText
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23760-23859                E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText
+
+Trace 94 - jquery-1.3.2.min.js:19:23760-23859 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23781-23835                M.responseText.replace(/<script(.|\s)*?\/script>/g,"")
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23762-23836                o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,""))
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23760-23859                E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText
+
+Trace 95 - jquery-1.3.2.min.js:19:23760-23859 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23845-23859                M.responseText
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23760-23859                E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText
+
+Trace 96 - jquery-1.4.2.min.js:120:380-455 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:402-416                   i.responseText
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:380-455                   e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText
+
+Trace 97 - jquery-1.4.2.min.js:120:380-455 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:402-431                   i.responseText.replace(tb,"")
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:382-432                   c("<div />").append(i.responseText.replace(tb,""))
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:380-455                   e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText
+
+Trace 98 - jquery-1.4.2.min.js:120:380-455 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:441-455                   i.responseText
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:380-455                   e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText
+
+Trace 99 - jquery-1.6.2.min.js:16:11795-11806 - javascript-code-injection:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:412-418                    s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:404-418                    this[0]=s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:23:43-47                      c(b)
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20178-20199                F.sort(function(J,I){
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20231-20255                o.data(I.elem,"closest")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21439-21446                this[0]
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21437-21454                k(this[0],g,d[g])
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6641-6642                  a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6723-6742                  d=a.getAttribute(e)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6850-6851                  d
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6838-6852                  f.parseJSON(d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11618-11619                b
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11659-11670                b=e.trim(b)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11795-11806                "return "+b
+
+Trace 100 - jquery-1.6.2.min.js:16:11795-11806 - javascript-code-injection:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:412-418                    s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:404-418                    this[0]=s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:23:87-97                      T.ready(a)
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:26:327-331                    c(s)
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20045-20066                o.data(this,"events")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21678-21685                this[0]
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21676-21690                k(this[0],a,d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6641-6642                  a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6723-6742                  d=a.getAttribute(e)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6850-6851                  d
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6838-6852                  f.parseJSON(d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11618-11619                b
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11659-11670                b=e.trim(b)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11795-11806                "return "+b
+
+Trace 101 - jquery-1.6.2.min.js:16:11795-11806 - javascript-code-injection:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:412-418                    s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:404-418                    this[0]=s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:23:87-97                      T.ready(a)
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:26:327-331                    c(s)
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20045-20066                o.data(this,"events")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21439-21446                this[0]
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21437-21454                k(this[0],g,d[g])
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6641-6642                  a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6723-6742                  d=a.getAttribute(e)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6850-6851                  d
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6838-6852                  f.parseJSON(d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11618-11619                b
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11659-11670                b=e.trim(b)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11795-11806                "return "+b
+
+Trace 102 - jquery-1.6.2.min.js:16:11795-11806 - javascript-code-injection:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:412-418                    s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:404-418                    this[0]=s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:23:43-47                      c(b)
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20178-20199                F.sort(function(J,I){
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20206-20230                o.data(J.elem,"closest")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21439-21446                this[0]
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21437-21454                k(this[0],g,d[g])
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6641-6642                  a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6723-6742                  d=a.getAttribute(e)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6850-6851                  d
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6838-6852                  f.parseJSON(d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11618-11619                b
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11659-11670                b=e.trim(b)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11795-11806                "return "+b
+
+Trace 103 - jquery-1.6.2.min.js:16:11795-11806 - javascript-code-injection:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:412-418                    s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:404-418                    this[0]=s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:23:43-47                      c(b)
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20178-20199                F.sort(function(J,I){
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20206-20230                o.data(J.elem,"closest")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21678-21685                this[0]
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21676-21690                k(this[0],a,d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6641-6642                  a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6723-6742                  d=a.getAttribute(e)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6850-6851                  d
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6838-6852                  f.parseJSON(d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11618-11619                b
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11659-11670                b=e.trim(b)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11795-11806                "return "+b
+
+Trace 104 - jquery-1.6.2.min.js:16:11795-11806 - javascript-code-injection:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:412-418                    s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:404-418                    this[0]=s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:23:43-47                      c(b)
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20178-20199                F.sort(function(J,I){
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20231-20255                o.data(I.elem,"closest")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21678-21685                this[0]
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21676-21690                k(this[0],a,d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6641-6642                  a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6723-6742                  d=a.getAttribute(e)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6850-6851                  d
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6838-6852                  f.parseJSON(d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11618-11619                b
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11659-11670                b=e.trim(b)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11795-11806                "return "+b
+
+Trace 105 - jquery-1.6.2.min.js:16:11795-11806 - javascript-code-injection:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:412-418                    s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:404-418                    this[0]=s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:23:43-47                      c(b)
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20045-20066                o.data(this,"events")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21439-21446                this[0]
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21437-21454                k(this[0],g,d[g])
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6641-6642                  a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6723-6742                  d=a.getAttribute(e)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6850-6851                  d
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6838-6852                  f.parseJSON(d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11618-11619                b
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11659-11670                b=e.trim(b)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11795-11806                "return "+b
+
+Trace 106 - jquery-1.6.2.min.js:16:11795-11806 - javascript-code-injection:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:412-418                    s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:404-418                    this[0]=s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:23:87-97                      T.ready(a)
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:26:327-331                    c(s)
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20052-20056                this
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20045-20066                o.data(this,"events")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21211-21212                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21686-21687                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21676-21690                k(this[0],a,d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6643-6644                  c
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6688-6722                  c.replace(j,"$1-$2").toLowerCase()
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6674-6722                  var e="data-"+c.replace(j,"$1-$2").toLowerCase()
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6723-6742                  d=a.getAttribute(e)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6850-6851                  d
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6838-6852                  f.parseJSON(d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11618-11619                b
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11659-11670                b=e.trim(b)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11795-11806                "return "+b
+
+Trace 107 - jquery-1.6.2.min.js:16:11795-11806 - javascript-code-injection:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:412-418                    s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:404-418                    this[0]=s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:23:43-47                      c(b)
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20045-20066                o.data(this,"events")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21678-21685                this[0]
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21676-21690                k(this[0],a,d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6641-6642                  a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6723-6742                  d=a.getAttribute(e)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6850-6851                  d
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6838-6852                  f.parseJSON(d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11618-11619                b
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11659-11670                b=e.trim(b)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11795-11806                "return "+b
+
+Trace 108 - jquery-1.6.2.min.js:16:11795-11806 - javascript-code-injection:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:412-418                    s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:21:404-418                    this[0]=s.body
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:23:43-47                      c(b)
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20052-20056                this
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:20045-20066                o.data(this,"events")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21211-21212                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21686-21687                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:21676-21690                k(this[0],a,d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6643-6644                  c
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6688-6722                  c.replace(j,"$1-$2").toLowerCase()
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6674-6722                  var e="data-"+c.replace(j,"$1-$2").toLowerCase()
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6723-6742                  d=a.getAttribute(e)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6850-6851                  d
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:6838-6852                  f.parseJSON(d)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11618-11619                b
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11659-11670                b=e.trim(b)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:16:11795-11806                "return "+b
+
+Trace 109 - jquery-1.6.2.min.js:17:30651-30652 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23781-23835                M.responseText.replace(/<script(.|\s)*?\/script>/g,"")
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23762-23836                o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,""))
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23760-23859                E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23753-23860                F.html(E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30289-30290                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30498-30524                a=a.replace(Z,"<$1></$2>")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30651-30652                a
+
+Trace 110 - jquery-1.6.2.min.js:17:30651-30652 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23781-23795                M.responseText
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23760-23859                E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23753-23860                F.html(E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30289-30290                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30498-30524                a=a.replace(Z,"<$1></$2>")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30651-30652                a
+
+Trace 111 - jquery-1.6.2.min.js:17:30651-30652 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23845-23859                M.responseText
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23760-23859                E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23753-23860                F.html(E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30289-30290                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30498-30524                a=a.replace(Z,"<$1></$2>")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30651-30652                a
+
+Trace 112 - jquery-1.6.2.min.js:17:30651-30652 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:402-431                   i.responseText.replace(tb,"")
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:382-432                   c("<div />").append(i.responseText.replace(tb,""))
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:380-455                   e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:373-456                   j.html(e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30289-30290                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30498-30524                a=a.replace(Z,"<$1></$2>")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30651-30652                a
+
+Trace 113 - jquery-1.6.2.min.js:17:30651-30652 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:402-416                   i.responseText
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:380-455                   e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:373-456                   j.html(e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30289-30290                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30498-30524                a=a.replace(Z,"<$1></$2>")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30651-30652                a
+
+Trace 114 - jquery-1.6.2.min.js:17:30651-30652 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:441-455                   i.responseText
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:380-455                   e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:373-456                   j.html(e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30289-30290                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30498-30524                a=a.replace(Z,"<$1></$2>")
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30651-30652                a
+
+Trace 115 - jquery-1.6.2.min.js:17:30751-30774 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23781-23795                M.responseText
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23760-23859                E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23753-23860                F.html(E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30289-30290                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30708-30730                this.each(function(b){
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30751-30774                a.call(this,b,c.html())
+
+Trace 116 - jquery-1.6.2.min.js:17:30751-30774 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23781-23835                M.responseText.replace(/<script(.|\s)*?\/script>/g,"")
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23762-23836                o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,""))
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23760-23859                E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23753-23860                F.html(E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30289-30290                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30708-30730                this.each(function(b){
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30751-30774                a.call(this,b,c.html())
+
+Trace 117 - jquery-1.6.2.min.js:17:30751-30774 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23845-23859                M.responseText
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23760-23859                E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText
+  WebGoat/Resources/client-scripts/jquery-1.3.2.min.js:19:23753-23860                F.html(E?o("<div/>").append(M.responseText.replace(/<script(.|\s)*?\/script>/g,"")).find(E):M.responseText)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30289-30290                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30708-30730                this.each(function(b){
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30751-30774                a.call(this,b,c.html())
+
+Trace 118 - jquery-1.6.2.min.js:17:30751-30774 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:402-416                   i.responseText
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:380-455                   e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:373-456                   j.html(e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30289-30290                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30708-30730                this.each(function(b){
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30751-30774                a.call(this,b,c.html())
+
+Trace 119 - jquery-1.6.2.min.js:17:30751-30774 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:402-431                   i.responseText.replace(tb,"")
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:382-432                   c("<div />").append(i.responseText.replace(tb,""))
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:380-455                   e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:373-456                   j.html(e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30289-30290                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30708-30730                this.each(function(b){
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30751-30774                a.call(this,b,c.html())
+
+Trace 120 - jquery-1.6.2.min.js:17:30751-30774 - javascript-dom-based-xss:
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:441-455                   i.responseText
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:380-455                   e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText
+  WebGoat/Resources/client-scripts/jquery-1.4.2.min.js:120:373-456                   j.html(e?c("<div />").append(i.responseText.replace(tb,"")).find(e):i.responseText)
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30289-30290                a
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30708-30730                this.each(function(b){
+  WebGoat/Resources/client-scripts/jquery-1.6.2.min.js:17:30751-30774                a.call(this,b,c.html())
+
+Trace 121 - jquery.autocomplete.js:288:25-41 - javascript-code-injection:
+  WebGoat/Resources/client-scripts/jquery.autocomplete-min.js:11:4197-4213           c.options.params
+  WebGoat/Resources/client-scripts/jquery.autocomplete-min.js:11:4175-4226           d.get(this.serviceUrl,c.options.params,function(e){
+  WebGoat/Resources/client-scripts/jquery.autocomplete-min.js:11:4223-4224           e
+  WebGoat/Resources/client-scripts/jquery.autocomplete-min.js:11:4244-4245           e
+  WebGoat/Resources/client-scripts/jquery.autocomplete-min.js:11:4226-4246           c.processResponse(e)
+  WebGoat/Resources/client-scripts/jquery.autocomplete.js:285:31-35                  text
+  WebGoat/Resources/client-scripts/jquery.autocomplete.js:288:25-41                  '(' + text + ')'
+
+Trace 122 - jquery.autocomplete.js:288:25-41 - javascript-code-injection:
+  WebGoat/Resources/client-scripts/jquery.autocomplete.js:242:32-49                  me.options.params
+  WebGoat/Resources/client-scripts/jquery.autocomplete.js:242:9-66                   $.get(this.serviceUrl, me.options.params, function(txt) {
+  WebGoat/Resources/client-scripts/jquery.autocomplete.js:242:60-63                  txt
+  WebGoat/Resources/client-scripts/jquery.autocomplete.js:242:86-89                  txt
+  WebGoat/Resources/client-scripts/jquery.autocomplete.js:242:67-90                  me.processResponse(txt)
+  WebGoat/Resources/client-scripts/jquery.autocomplete.js:285:31-35                  text
+  WebGoat/Resources/client-scripts/jquery.autocomplete.js:288:25-41                  '(' + text + ')'
